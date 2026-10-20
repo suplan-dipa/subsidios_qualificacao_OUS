@@ -336,6 +336,56 @@ details.mini2[open]>summary{margin-bottom:8px}
 .matriz td.mc{text-align:center;color:var(--accent);font-size:14px}.matriz th{text-align:center}.matriz th:first-child,.matriz th:last-child{text-align:left}.matriz th small{font-weight:500;color:var(--muted)}
 .matrizWrap{margin:8px 0 12px}
 @media(max-width:1100px){.riCols{grid-template-columns:1fr}}
+
+/* página inicial ilustrada */
+:root{--dg-street:#c9d1d8;--dg-walk:#e6e9ec;--dg-bld:#d6dee6;--dg-green:#cfe6d5;--dg-tree:#5e9e6f;--dg-deck:#d9b48c;--dg-path:#b3c0ca;--dg-rain:#9cc6e6;--dg-afp:#fbe7c6}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--dg-street:#2c3944;--dg-walk:#3a4652;--dg-bld:#2b3a48;--dg-green:#1f3d2b;--dg-tree:#4f9a66;--dg-deck:#7a5a3a;--dg-path:#56636e;--dg-rain:#2f5f86;--dg-afp:#4a3a1c}}
+:root[data-theme="dark"]{--dg-street:#2c3944;--dg-walk:#3a4652;--dg-bld:#2b3a48;--dg-green:#1f3d2b;--dg-tree:#4f9a66;--dg-deck:#7a5a3a;--dg-path:#56636e;--dg-rain:#2f5f86;--dg-afp:#4a3a1c}
+.heroWide{max-width:none;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,.8fr);gap:24px;align-items:center}
+.heroTxt{display:grid;gap:10px}
+.ebook{display:grid;gap:6px;text-decoration:none;color:var(--ink);background:var(--panel);border:2px solid var(--accent);border-radius:14px;padding:20px;box-shadow:0 8px 26px #1c49611a}
+.ebook:hover{background:var(--accent-soft)}.ebook b{font-size:17px;color:var(--accent);line-height:1.3}.ebook span{font-size:12.5px;color:var(--ink-2)}
+.ebTag{justify-self:start;background:var(--accent);color:#fff!important;font-weight:800;font-size:11px!important;letter-spacing:.08em;text-transform:uppercase;border-radius:999px;padding:3px 10px}
+.sobre{display:grid;grid-template-columns:1fr 1fr;gap:18px;font-size:14.5px;line-height:1.6;max-width:none}
+.fig{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:10px}
+.fig figcaption{font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.figWide{margin-top:4px}
+.figScroll{overflow-x:auto}.figScroll .dg{min-width:640px}
+.dg{width:100%;height:auto;display:block;color:var(--ink)}
+.dg text{font-family:var(--sans);font-size:12.5px;fill:currentColor}
+.dg .tb{font-weight:700}.dg .ts{font-size:11.5px;fill:var(--ink-2)}.dg .tA{fill:var(--accent);font-weight:700}
+.dg .street{fill:var(--dg-street)}.dg .walk{fill:var(--dg-walk)}.dg .bld{fill:var(--dg-bld);stroke:currentColor;stroke-width:1.2}
+.dg .green{fill:var(--dg-green)}.dg .tree{fill:var(--dg-tree);stroke:currentColor;stroke-width:.8;fill-opacity:.85}.dg .shade{fill:var(--dg-green);stroke:var(--dg-tree);stroke-dasharray:3 3}
+.dg .deck{fill:var(--dg-deck)}.dg .path{fill:var(--dg-path)}.dg .rain{fill:var(--dg-rain);stroke:currentColor;stroke-width:.8}
+.dg .bench{fill:currentColor;opacity:.75}.dg .ramp{fill:var(--dg-path);stroke:currentColor;stroke-dasharray:2 2}
+.dg .hl{stroke:var(--accent);stroke-width:5}.dg .blind{stroke:var(--bad);stroke-width:5}
+.dg .fence{stroke:currentColor;stroke-width:2;stroke-dasharray:3 3}.dg .sep{stroke:currentColor;stroke-width:1;stroke-dasharray:4 3}
+.dg .div{stroke:currentColor;stroke-width:1.5;stroke-dasharray:8 4}.dg .gate{fill:var(--dg-street);stroke:currentColor}
+.dg .marq{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.5}.dg .win{fill:var(--accent)}
+.dg .diam{fill:none;stroke:var(--accent);stroke-width:2;stroke-dasharray:5 4}
+.dg .afp{fill:var(--dg-afp);stroke:var(--warn);stroke-width:2;stroke-dasharray:6 4}
+.rotaCards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.rotaCards>div{display:grid;gap:4px;font-size:12.5px;color:var(--ink-2);border-top:3px solid var(--accent);padding-top:8px}.rotaCards b{color:var(--ink);font-size:13px}
+.fluxo{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;counter-reset:fx}
+.fx{position:relative;display:grid;gap:4px;align-content:start;background:var(--bg);border:1px solid var(--line);padding:12px 14px 12px 22px;margin-right:14px;border-radius:10px;font-size:12.5px;color:var(--ink-2)}
+.fx b{color:var(--ink);font-size:13.5px}
+.fx::after{content:"→";position:absolute;right:-13px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:800;font-size:16px}
+.fx:last-child::after{content:"↺";right:-14px}
+.fx.on{background:var(--accent-soft);border-color:var(--accent)}.fx em{font-style:normal;font-weight:800;font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.altFlow{display:grid;gap:6px}
+.afRow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;gap:6px;align-items:stretch}
+.afBox{display:grid;gap:3px;align-content:center;text-align:center;border:1.5px solid var(--line);background:var(--bg);border-radius:10px;padding:10px;font-weight:750;font-size:13.5px}
+.afBox small{font-weight:500;font-size:12px;color:var(--ink-2)}
+.afQ{border-style:dashed;border-color:var(--accent)}.afOk{border-color:var(--ok);background:var(--ok-soft)}.afAlt{border-color:var(--warn);background:var(--warn-soft)}.afGt{border-color:var(--warn)}.afSoft{border-style:dashed}
+.afArr{display:grid;place-items:center;color:var(--accent);font-weight:800;font-size:18px;line-height:1}.afArr small{font-size:11px;font-weight:700;color:var(--muted)}
+.afDown{display:grid;grid-template-columns:1fr auto 1fr auto 1fr auto 1fr;color:var(--accent);font-weight:800;font-size:18px}.afDown small{font-size:11px;color:var(--muted)}
+.afDown{justify-items:center}.afDown>*{grid-column:3}
+.figGrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fcHead{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.fcHead b{font-size:16px}
+.figSpan{grid-column:1/-1}.figSpan .dg{max-width:760px;justify-self:center}
+@media(max-width:1100px){.heroWide{grid-template-columns:1fr}.fluxo{grid-template-columns:repeat(3,minmax(0,1fr));row-gap:10px}.rotaCards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:800px){.sobre,.figGrid{grid-template-columns:1fr}.afRow{grid-template-columns:1fr}.afArr{display:flex;align-items:center;justify-content:center;gap:6px;min-height:20px}.afArr{font-size:0}.afArr::after{content:"↓";font-size:18px}.afArr small{font-size:11px}.afDown>*{grid-column:1}.afDown{grid-template-columns:1fr}}
+@media(max-width:600px){.fluxo{grid-template-columns:1fr}.fx{margin-right:0;margin-bottom:14px}.fx::after{right:auto;left:50%;top:auto;bottom:-15px;transform:rotate(90deg)}.rotaCards{grid-template-columns:1fr}}
 /* ===== acessibilidade, explicações e ligações entre abas ===== */
 .skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;font-weight:700}
 .skip:focus{left:12px}
@@ -418,32 +468,214 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,su
 <a class="skip" href="#conteudo">Pular para o conteúdo</a><nav class="globalNav" aria-label="Navegação principal"><div class="navInner"><div class="navBrand">OUS Somos Centro <small>Qualificação urbana · proposta v28.1</small></div><div class="nav"><a href="#inicio">Início</a><a href="#simulador">Simulador</a><a href="#regras">Regras</a><a href="#catalogo">Catálogo</a><a href="#subsidios">Subsídios para a norma</a><a href="#impacto">Impacto</a><a href="#versoes">Versões</a></div><div class="navTools"><button type="button" class="navBtn" data-glossario aria-label="Glossário de termos">Termos</button><button type="button" class="navBtn" id="uxFonte" aria-pressed="false" aria-label="Aumentar o tamanho do texto">A+</button></div></div></nav>
 <main id="conteudo" tabindex="-1">
 <section class="page" data-page="inicio">
-<div class="heroInicio"><div class="eyebrow">DIPA · SUPLAN · SMPU / PBH · proposta técnica em discussão</div><h1>Qualificação urbana da OUS Somos Centro</h1>
-<p class="lead">A Lei 12.151/2026 permite flexibilizar afastamentos e o uso da área permeável para quem adere à Operação Urbana. Em troca, o projeto precisa qualificar a frente para a rua, preservar luz e ventilação nas laterais e, na Área 1, plantar árvores e melhorar a calçada. Esta plataforma mostra <b>o que cada projeto precisa cumprir, quanto falta e como resolver</b>, condição por condição, sem notas nem pontuação.</p>
-<p class="hint">Material técnico para discussão da regulamentação. Não substitui a lei, o Decreto, a Portaria nem o licenciamento. Valores entre colchetes ainda estão em decisão.</p></div>
+<div class="heroInicio heroWide">
+<div class="heroTxt"><div class="eyebrow">DIPA · SUPLAN · SMPU / PBH · subsídios preliminares</div><h1>Qualificação urbana da OUS Somos Centro</h1>
+<p class="lead">A Lei 12.151/2026 permite flexibilizar afastamentos e o uso da área permeável para quem adere à Operação Urbana. Em troca, o projeto qualifica a frente para a rua, preserva luz e ventilação nas laterais e, na Área 1, planta árvores e melhora a calçada. Esta plataforma mostra <b>o que cada projeto precisa cumprir, quanto falta e como resolver</b>, condição por condição.</p>
+<p class="hint">Proposta técnica preliminar, para iniciar e subsidiar a regulamentação. Não substitui a lei, o Decreto, a Portaria nem o licenciamento. Valores entre colchetes estão em decisão.</p></div>
+<a class="ebook" href="https://suplan-dipa.github.io/ebook_somos_centro/" target="_blank" rel="noopener"><span class="ebTag">E-book</span><b>E-book ilustrado e interativo da Operação Urbana Simplificada Somos Centro</b><span>Abrir em nova aba: suplan-dipa.github.io/ebook_somos_centro</span></a>
+</div>
+
+<h2 class="hHome">Sobre esta página</h2>
+<div class="sobre">
+<p>Este material é um <b>ponto de partida</b> para pensar a qualificação urbana da OUS. Ele organiza o que a lei já define, propõe como medir o que ela pede e deixa marcado o que ainda depende de decisão da gestão ou de consulta à Procuradoria. Nada aqui é minuta: são subsídios para quem vai decidir e redigir.</p>
+<p>A proposta segue uma lógica usada em códigos de edificações e de desenho urbano de outros países, como a Austrália (solução pré-aceita ou de desempenho), Toronto (patamar obrigatório e níveis voluntários) e Oregon (critérios claros e objetivos). <b>Em vez de nota, condições</b>: cada flexibilização tem requisitos medidos, com um mínimo. Quem cumpre está dispensado de estudos; quem propõe outra solução demonstra o mesmo resultado ao Grupo Técnico. Uma condição não compensa outra.</p>
+</div>
+<figure class="fig">
+<div class="fluxo" role="list" aria-label="Fluxo proposto da regulamentação, da lei ao monitoramento">
+<div class="fx" role="listitem"><b>Lei 12.151/2026</b><span>Anexo II e art. 18 dizem o que se flexibiliza e o que se exige</span></div>
+<div class="fx on" role="listitem"><b>Subsídios técnicos</b><span>Esta plataforma: condições, caminhos, catálogo, impacto</span><em>você está aqui</em></div>
+<div class="fx" role="listitem"><b>Decreto e Portaria</b><span>Redação jurídica, publicados juntos</span></div>
+<div class="fx" role="listitem"><b>Projetos</b><span>Simulador, catálogo, ficha de qualificação; Grupo Técnico nas alternativas</span></div>
+<div class="fx" role="listitem"><b>Revisão</b><span>Monitoramento e revisão dos valores em 12 meses; precedentes viram fichas</span></div>
+</div>
+<figcaption>Fluxo proposto. A plataforma serve à segunda etapa: dar base técnica às decisões e à redação. A revisão periódica devolve ao catálogo as soluções aprovadas pelo Grupo Técnico.</figcaption>
+</figure>
 
 <h2 class="hHome">Por onde começar</h2>
 <div class="quickGrid">
-<a href="#simulador"><b>Verificar um projeto →</b><span><em>Para quem projeta.</em> Informe o lote e o desenho em cinco etapas. Cada campo mostra o mínimo exigido; o resultado lista só o que falta e indica fichas do catálogo que ajudam.</span></a>
-<a href="#regras"><b>Conferir as regras →</b><span><em>Para quem analisa.</em> Cada condição com o que mede, o que conta, o valor exigido, se o valor vem da lei ou é proposta, e como se prova.</span></a>
-<a href="#quadro-decisoes"><b>Ver o que falta decidir →</b><span><em>Para a gestão.</em> Decisões pendentes com alternativas e recomendação técnica; o impacto de cada escolha está na aba Impacto.</span></a>
+<a href="#simulador"><b>Verificar um projeto →</b><span><em>Para quem projeta.</em> Cinco etapas; cada campo mostra o mínimo exigido, e o resultado lista só o que falta e as fichas do catálogo que ajudam.</span></a>
+<a href="#regras"><b>Conferir as regras →</b><span><em>Para quem analisa.</em> Cada condição com o que mede, o que conta, o valor exigido, a origem do valor e a prova.</span></a>
+<a href="#quadro-decisoes"><b>Ver o que falta decidir →</b><span><em>Para a gestão.</em> Decisões pendentes com alternativas e recomendação; o efeito de cada escolha está na aba Impacto.</span></a>
 </div>
 
-<h2 class="hHome">Como o modelo funciona, em quatro ideias</h2>
-<div class="ideas">
-<div><span class="iNum">1</span><b>Condições, não nota</b><p>Cada flexibilização tem condições medidas (por exemplo, “acesso de veículos ≤ 20% da testada”). Uma condição não compensa outra.</p><a href="#regras">Ver as condições</a></div>
-<div><span class="iNum">2</span><b>Caminhos para a frente</b><p>A frente pode ser qualificada como térreo ativo, jardim, calçada estendida, no alinhamento ou combinando trechos. O projeto escolhe o que combina com o uso.</p><a href="#sim-frente">Escolher no simulador</a></div>
-<div><span class="iNum">3</span><b>Solução alternativa</b><p>Quem não cumpre uma condição pode demonstrar outra solução com o mesmo resultado. O Grupo Técnico avalia só aquela condição.</p><a href="#t2-verificacao">Como funciona</a></div>
-<div><span class="iNum">4</span><b>Catálogo de soluções</b><p>Fichas com formas de executar: jardim de chuva, deck, pátio, galeria. Orientam o projeto; as medidas continuam sendo provadas.</p><a href="#catalogo">Abrir o catálogo</a></div>
+<h2 class="hHome">Caminhos para a frente</h2>
+<figure class="fig figWide">
+<div class="figScroll">
+<svg class="dg" viewBox="0 0 900 262" role="img" aria-label="Cinco caminhos para qualificar a frente: térreo ativo, jardim, calçada estendida, no alinhamento e por trechos. Em todos, o edifício, o recuo e a calçada se relacionam de forma diferente.">
+<defs><marker id="ah1" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<g>
+<!-- A -->
+<rect class="street" x="10" y="176" width="160" height="26"/><rect class="walk" x="10" y="150" width="160" height="26"/><rect class="walk" x="10" y="100" width="160" height="50"/>
+<rect class="bld" x="20" y="20" width="140" height="80"/>
+<line class="hl" x1="20" y1="100" x2="122" y2="100"/><line class="blind" x1="128" y1="100" x2="160" y2="100"/>
+<text class="tA" x="70" y="90" text-anchor="middle">uso ativo</text><text x="144" y="90" text-anchor="middle" class="ts">cego</text>
+<line x1="50" y1="142" x2="50" y2="110" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah1)"/><line x1="95" y1="142" x2="95" y2="110" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah1)"/>
+<text x="90" y="226" text-anchor="middle" class="tb">A · Térreo ativo</text><text x="90" y="244" text-anchor="middle" class="ts">uso ativo na maior parte</text>
+<!-- B -->
+<rect class="street" x="190" y="176" width="160" height="26"/><rect class="walk" x="190" y="150" width="160" height="26"/><rect class="green" x="190" y="100" width="160" height="50"/>
+<rect class="bld" x="200" y="20" width="140" height="80"/>
+<circle class="tree" cx="232" cy="124" r="13"/><circle class="tree" cx="306" cy="124" r="13"/>
+<line class="fence" x1="190" y1="150" x2="350" y2="150"/>
+<text x="270" y="166" text-anchor="middle" class="ts">gradil vazado</text>
+<text x="270" y="226" text-anchor="middle" class="tb">B · Jardim</text><text x="270" y="244" text-anchor="middle" class="ts">recuo verde e visível</text>
+<!-- C -->
+<rect class="street" x="370" y="176" width="160" height="26"/><rect class="walk" x="370" y="100" width="160" height="76"/>
+<rect class="bld" x="380" y="20" width="140" height="80"/>
+<circle class="shade" cx="450" cy="122" r="20"/><circle class="tree" cx="450" cy="122" r="9"/>
+<rect class="bench" x="388" y="132" width="30" height="7"/><rect class="bench" x="484" y="132" width="30" height="7"/>
+<text x="450" y="166" text-anchor="middle" class="ts">mesmo nível, aberto</text>
+<text x="450" y="226" text-anchor="middle" class="tb">C · Calçada estendida</text><text x="450" y="244" text-anchor="middle" class="ts">sombra e lugares para sentar</text>
+<!-- R -->
+<rect class="street" x="550" y="176" width="160" height="26"/><rect class="walk" x="550" y="150" width="160" height="26"/>
+<rect class="bld" x="560" y="20" width="140" height="130"/>
+<line class="hl" x1="560" y1="150" x2="672" y2="150"/>
+<rect class="marq" x="560" y="152" width="140" height="8"/>
+<text x="630" y="140" text-anchor="middle" class="tA">térreo aberto</text><text x="630" y="172" text-anchor="middle" class="ts">marquise</text>
+<text x="630" y="226" text-anchor="middle" class="tb">R · No alinhamento</text><text x="630" y="244" text-anchor="middle" class="ts">edifício existente, sem recuo</text>
+<!-- D -->
+<rect class="street" x="730" y="176" width="160" height="26"/><rect class="walk" x="730" y="150" width="160" height="26"/>
+<rect class="walk" x="730" y="100" width="53" height="50"/><rect class="green" x="783" y="100" width="54" height="50"/><rect class="walk" x="837" y="100" width="53" height="50"/>
+<rect class="bld" x="740" y="20" width="140" height="80"/>
+<line class="hl" x1="740" y1="100" x2="783" y2="100"/>
+<circle class="tree" cx="810" cy="122" r="11"/><rect class="bench" x="848" y="128" width="30" height="7"/>
+<line class="sep" x1="783" y1="96" x2="783" y2="154"/><line class="sep" x1="837" y1="96" x2="837" y2="154"/>
+<text x="756" y="146" text-anchor="middle" class="tb">A</text><text x="810" y="146" text-anchor="middle" class="tb">B</text><text x="864" y="146" text-anchor="middle" class="tb">C</text>
+<text x="810" y="226" text-anchor="middle" class="tb">D · Por trechos</text><text x="810" y="244" text-anchor="middle" class="ts">cada trecho no seu caminho</text>
+</g></svg></div>
+<figcaption>Os cinco caminhos para qualificar a frente (Anexo II, item 1.1). Em todos valem os acessos de pedestre e o limite de acesso de veículos; o que muda é a relação entre recuo, térreo e calçada. Em D, um trecho bom não compensa outro.</figcaption>
+<div class="rotaCards">
+<div><b>A · Térreo ativo</b><span>Comércio, serviço, hall aberto. Mede a testada com uso ativo, o maior trecho cego e se o recuo está livre.</span></div>
+<div><b>B · Jardim</b><span>Residências. Mede o recuo vegetado, o fechamento vazado e o maior muro opaco.</span></div>
+<div><b>C · Calçada estendida</b><span>Equipamentos e grandes testadas. Recuo no nível, aberto ao público, com sombra e bancos.</span></div>
+<div><b>R · No alinhamento</b><span>Retrofit sem recuo. Térreo aberto, cego limitado e uma medida (marquise, vitrine, fachada verde).</span></div>
+<div><b>D · Por trechos</b><span>Testadas longas e esquinas. Cada trecho é A, B ou C; o cego se mede na frente inteira.</span></div>
 </div>
+<div class="relLinks"><a href="#sim-frente">Escolher no simulador</a><a href="#regra-frente">Regras e fichas de cada caminho</a></div>
+</figure>
+
+<h2 class="hHome">Solução pré-aceita ou solução alternativa</h2>
+<figure class="fig figWide">
+<div class="altFlow" role="img" aria-label="Fluxo de comprovação: se o projeto cumpre a condição, é solução pré-aceita e vai à ficha de qualificação; se não cumpre, ajusta o projeto ou propõe solução alternativa, que o Grupo Técnico avalia só naquela condição; a aprovada vira precedente e pode entrar no catálogo.">
+<div class="afRow">
+<div class="afBox">Projeto<small>medidas de cada condição</small></div><div class="afArr">→</div>
+<div class="afBox afQ">Cumpre a condição?</div><div class="afArr"><small>sim</small>→</div>
+<div class="afBox afOk">Solução pré-aceita<small>sem estudo especial</small></div><div class="afArr">→</div>
+<div class="afBox">Ficha de qualificação<small>o que cumpre e como</small></div>
+</div>
+<div class="afDown"><small>se não cumpre</small>↓</div>
+<div class="afRow">
+<div class="afBox afSoft">Ajustar o projeto<small>as fichas do catálogo mostram como</small></div><div class="afArr"><small>ou</small></div>
+<div class="afBox afAlt">Solução alternativa<small>o que faz · como atende · como prova</small></div><div class="afArr">→</div>
+<div class="afBox afGt">Grupo Técnico<small>avalia só essa condição, pela exigência de desempenho</small></div><div class="afArr">→</div>
+<div class="afBox">Precedente<small>na revisão, pode virar ficha do catálogo</small></div>
+</div>
+</div>
+<figcaption>Duas formas de comprovar a mesma exigência. A régua do Grupo Técnico é a exigência de desempenho do grupo, não a preferência pela solução. O número de árvores do art. 18 é obrigação da lei e não tem alternativa.</figcaption>
+<div class="relLinks"><a href="#t2-verificacao">Como funciona nos Subsídios</a><a href="#regras">Exigências de desempenho</a></div>
+</figure>
 
 <h2 class="hHome">O que o projeto precisa cumprir</h2>
-<div class="oblig">
-<div class="ob req"><b>Frente para a rua</b><span>Obrigatório para quem adere (Anexo II, item 1.1)</span><a href="#sim-frente">Ir à etapa</a></div>
-<div class="ob req"><b>Laterais e fundos</b><span>Obrigatório; parte do afastamento legal (item 5)</span><a href="#sim-laterais">Ir à etapa</a></div>
-<div class="ob req"><b>Árvores e calçada</b><span>Obrigatório na Área 1 (art. 18)</span><a href="#sim-arvores">Ir à etapa</a></div>
-<div class="ob opt"><b>Deck e caminho na área permeável</b><span>Opcional (item 2.1); a taxa da lei continua inteira</span><a href="#sim-opcionais">Ir à etapa</a></div>
-<div class="ob opt"><b>Área de fruição pública</b><span>Opcional; sempre com o Grupo Técnico (Anexo III)</span><a href="#sim-opcionais">Ir à etapa</a></div>
+<div class="figGrid">
+
+<figure class="fig figCard"><div class="fcHead"><b>Frente para a rua</b><span class="tag req">obrigatório</span></div>
+<svg class="dg" viewBox="0 0 460 292" role="img" aria-label="Planta da frente: testada, recuo frontal, acessos de pedestre, testada com uso ativo, trecho cego e acesso de veículos limitado.">
+<defs><marker id="ah2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect class="street" x="10" y="226" width="440" height="30"/><rect class="walk" x="10" y="200" width="440" height="26"/>
+<rect class="walk" x="30" y="130" width="400" height="70" opacity=".55"/>
+<line class="div" x1="30" y1="20" x2="30" y2="200"/><line class="div" x1="430" y1="20" x2="430" y2="200"/>
+<rect class="bld" x="50" y="30" width="360" height="100"/>
+<line class="blind" x1="50" y1="130" x2="108" y2="130"/><line class="hl" x1="108" y1="130" x2="300" y2="130"/>
+<rect class="gate" x="330" y="124" width="44" height="10"/>
+<text x="54" y="120" class="ts">cego ≤ 15 m</text><text x="204" y="120" text-anchor="middle" class="tA">testada com uso ativo</text>
+<line x1="160" y1="180" x2="160" y2="140" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/><line x1="250" y1="180" x2="250" y2="140" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah2)"/>
+<text x="205" y="195" text-anchor="middle" class="ts">acessos de pedestre</text>
+<line x1="352" y1="180" x2="352" y2="140" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#ah2)"/>
+<text x="352" y="195" text-anchor="middle" class="ts">veículos ≤ 20%</text>
+<line x1="422" y1="134" x2="422" y2="196" stroke="currentColor" stroke-width="1" marker-start="url(#ah2)" marker-end="url(#ah2)"/><text x="416" y="160" text-anchor="end" class="ts">recuo</text>
+<line x1="30" y1="270" x2="430" y2="270" stroke="currentColor" stroke-width="1" marker-start="url(#ah2)" marker-end="url(#ah2)"/><text x="230" y="286" text-anchor="middle" class="tb">testada: frentes do lote para a rua</text>
+<text x="230" y="80" text-anchor="middle" class="tb">edifício</text><text x="440" y="214" text-anchor="end" class="ts">calçada</text>
+</svg>
+<figcaption>A lei manda qualificar o afastamento frontal (Anexo II, 1.1). Todo caminho pede acessos de pedestre a curta distância e limita a largura do acesso de veículos; cada caminho acrescenta as suas medidas.</figcaption>
+<div class="relLinks"><a href="#sim-frente">Ir à etapa</a><a href="#regra-frente">Regras</a></div></figure>
+
+<figure class="fig figCard"><div class="fcHead"><b>Laterais e fundos</b><span class="tag req">obrigatório</span></div>
+<svg class="dg" viewBox="0 0 460 292" role="img" aria-label="Planta das laterais: o afastamento legal é o ponto de partida; fachada sem janelas pode encostar na divisa; fachada com janelas abaixo do legal respeita o diâmetro de iluminação.">
+<defs><marker id="ah3" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect class="street" x="10" y="250" width="440" height="30"/><text x="440" y="270" text-anchor="end" class="ts">rua</text>
+<line class="div" x1="40" y1="24" x2="40" y2="246"/><line class="div" x1="420" y1="24" x2="420" y2="246"/><line class="div" x1="40" y1="24" x2="420" y2="24"/>
+<text x="46" y="18" class="ts">divisa de fundos</text>
+<rect class="bld" x="40" y="104" width="250" height="110"/>
+<line class="hl" x1="40" y1="104" x2="40" y2="214" stroke-width="6"/>
+<text x="52" y="152" class="tA">empena cega</text><text x="52" y="168" class="ts">pode encostar (5.1.1)</text>
+<rect class="win" x="286" y="128" width="8" height="16"/><rect class="win" x="286" y="176" width="8" height="16"/>
+<line x1="294" y1="160" x2="420" y2="160" stroke="currentColor" stroke-width="1" marker-start="url(#ah3)" marker-end="url(#ah3)"/>
+<text x="357" y="150" text-anchor="middle" class="tb">afastamento legal</text><text x="357" y="178" text-anchor="middle" class="ts">Tabela 4, B = 8</text>
+<rect class="win" x="110" y="100" width="18" height="8"/><rect class="win" x="190" y="100" width="18" height="8"/>
+<circle class="diam" cx="160" cy="64" r="34"/><line x1="126" y1="64" x2="194" y2="64" stroke="currentColor" stroke-width="1" marker-start="url(#ah3)" marker-end="url(#ah3)"/>
+<text x="206" y="58" class="tb">com janelas, abaixo do legal:</text><text x="206" y="74" class="ts">diâmetro de iluminação (Lei 9.725)</text>
+<text x="165" y="240" text-anchor="middle" class="ts">edifício de altura H</text>
+</svg>
+<figcaption>O ponto de partida é o afastamento legal (item 5.1.2). Quem o mantém não usa flexibilização. Abaixo dele: sem janelas, até a divisa; com janelas, o diâmetro de iluminação do Código de Edificações, ou estudo de iluminação e ventilação ao Grupo Técnico (5.3).</figcaption>
+<div class="relLinks"><a href="#sim-laterais">Ir à etapa</a><a href="#regra-laterais">Regras</a></div></figure>
+
+<figure class="fig figCard"><div class="fcHead"><b>Árvores e calçada</b><span class="tag req">obrigatório na Área 1</span></div>
+<svg class="dg" viewBox="0 0 460 280" role="img" aria-label="Planta da testada com uma árvore de médio ou grande porte a cada 10 metros no recuo e melhorias na calçada: jardim de chuva, banco e rampa.">
+<defs><marker id="ah4" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect class="bld" x="20" y="20" width="420" height="66"/><text x="230" y="58" text-anchor="middle" class="tb">edifício</text>
+<rect class="walk" x="20" y="86" width="420" height="66" opacity=".55"/>
+<circle class="tree" cx="90" cy="119" r="20"/><circle class="tree" cx="230" cy="119" r="20"/><circle class="tree" cx="370" cy="119" r="20"/>
+<rect class="walk" x="10" y="152" width="440" height="48"/><rect class="street" x="10" y="200" width="440" height="30"/>
+<rect class="rain" x="40" y="160" width="100" height="16"/><text x="90" y="192" text-anchor="middle" class="ts">jardim de chuva</text>
+<rect class="bench" x="208" y="166" width="44" height="8"/><text x="230" y="192" text-anchor="middle" class="ts">banco, sombra</text>
+<rect class="ramp" x="388" y="158" width="44" height="22"/><text x="410" y="192" text-anchor="middle" class="ts">rampa</text>
+<line x1="20" y1="246" x2="440" y2="246" stroke="currentColor" stroke-width="1"/>
+<line x1="20" y1="240" x2="20" y2="252" stroke="currentColor"/><line x1="160" y1="240" x2="160" y2="252" stroke="currentColor"/><line x1="300" y1="240" x2="300" y2="252" stroke="currentColor"/><line x1="440" y1="240" x2="440" y2="252" stroke="currentColor"/>
+<text x="90" y="240" text-anchor="middle" class="ts">10 m</text><text x="230" y="240" text-anchor="middle" class="ts">10 m</text><text x="370" y="240" text-anchor="middle" class="ts">10 m</text>
+<text x="230" y="272" text-anchor="middle" class="tb">1 árvore de porte a cada 10 m de testada</text>
+</svg>
+<figcaption>Art. 18: árvores de médio ou grande porte no afastamento frontal e ao menos uma melhoria da calçada da testada, com manutenção registrada no TCU. Sem recuo, o plantio vai para a Subárea 1B, em local definido pelo Grupo Técnico.</figcaption>
+<div class="relLinks"><a href="#sim-arvores">Ir à etapa</a><a href="#regra-arvores">Regras</a></div></figure>
+
+<figure class="fig figCard"><div class="fcHead"><b>Deck e caminho na área permeável</b><span class="tag opt">opcional</span></div>
+<svg class="dg" viewBox="0 0 460 280" role="img" aria-label="A área permeável da lei continua inteira e se divide em solo vegetado, deck e caminho, com limites. O deck tira vegetação e devolve um ganho em água retida além da caixa ou em vegetação nova.">
+<defs><marker id="ah5" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect class="bld" x="20" y="20" width="180" height="100"/><text x="110" y="74" text-anchor="middle" class="tb">edifício</text>
+<rect class="green" x="20" y="120" width="82" height="130"/><rect class="deck" x="102" y="120" width="54" height="130"/><rect class="path" x="156" y="120" width="44" height="130"/>
+<line class="sep" x1="102" y1="120" x2="102" y2="250"/><line class="sep" x1="156" y1="120" x2="156" y2="250"/>
+<rect x="20" y="20" width="180" height="230" fill="none" stroke="currentColor" stroke-width="1"/>
+<text x="61" y="190" text-anchor="middle" class="tb">solo</text><text x="129" y="190" text-anchor="middle" class="tb">deck</text><text x="178" y="186" text-anchor="middle" class="ts">cami-</text><text x="178" y="200" text-anchor="middle" class="ts">nho</text>
+<text x="110" y="268" text-anchor="middle" class="ts">área permeável no lote</text>
+<text x="230" y="36" class="tb">taxa da lei: continua inteira</text>
+<rect class="green" x="230" y="46" width="116" height="26"/><rect class="deck" x="346" y="46" width="63" height="26"/><rect class="path" x="409" y="46" width="31" height="26"/>
+<text x="288" y="90" text-anchor="middle" class="ts">solo ≥ 50%</text><text x="377" y="90" text-anchor="middle" class="ts">deck ≤ 30%</text><text x="440" y="104" text-anchor="end" class="ts">cam. ≤ 20%</text>
+<line x1="377" y1="96" x2="377" y2="128" stroke="currentColor" stroke-width="1.5" marker-end="url(#ah5)"/>
+<text x="230" y="146" class="tb">o deck tira vegetação e devolve:</text>
+<circle class="rain" cx="244" cy="172" r="11"/><text x="262" y="177" class="ts">água além da caixa exigida</text>
+<circle class="tree" cx="244" cy="204" r="11"/><text x="262" y="209" class="ts">ou vegetação nova</text><text x="262" y="223" class="ts">(jardim de chuva vale 2×)</text>
+<text x="230" y="248" class="ts">ou outra solução, com o Grupo Técnico</text>
+</svg>
+<figcaption>Item 2.1: a taxa de permeabilidade da lei fica inteira no lote; parte dela pode virar deck ou caminho drenante, dentro de limites. Cada m² de deck pede 1 m² equivalente de ganho, pelo meio que o projeto escolher. Nenhuma solução baseada na natureza é obrigatória.</figcaption>
+<div class="relLinks"><a href="#sim-opcionais">Ir à etapa</a><a href="#regra-tp">Regras</a></div></figure>
+
+<figure class="fig figCard figSpan"><div class="fcHead"><b>Área de fruição pública</b><span class="tag opt">opcional · sempre com o Grupo Técnico</span></div>
+<svg class="dg" viewBox="0 0 460 270" role="img" aria-label="Planta de uma área de fruição pública aberta ao público, ligada à calçada, com bebedouro, brinquedo, equipamento esportivo e atravessamento de quadra; cada elemento acrescenta área líquida por metro quadrado de AFP.">
+<defs><marker id="ah6" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="currentColor"/></marker></defs>
+<rect class="street" x="10" y="2" width="440" height="22"/><rect class="street" x="10" y="242" width="440" height="24"/>
+<text x="16" y="17" class="ts">rua</text><text x="16" y="259" class="ts">rua</text>
+<path class="afp" d="M20 150 H170 V24 H290 V150 H440 V242 H20 Z"/>
+<rect class="bld" x="20" y="24" width="150" height="126"/><rect class="bld" x="290" y="24" width="150" height="126"/>
+<text x="95" y="90" text-anchor="middle" class="tb">edifício</text><text x="365" y="90" text-anchor="middle" class="tb">edifício</text>
+<text x="215" y="80" text-anchor="middle" class="tA">área de</text><text x="215" y="96" text-anchor="middle" class="tA">fruição</text><text x="215" y="112" text-anchor="middle" class="tA">pública</text>
+<line x1="270" y1="8" x2="270" y2="218" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" marker-start="url(#ah6)"/><line x1="270" y1="242" x2="270" y2="258" stroke="currentColor" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah6)"/>
+<text x="264" y="40" text-anchor="end" class="ts">atravessamento</text><text x="264" y="54" text-anchor="end" class="ts">de quadra +0,5</text>
+<path class="rain" d="M76 168 C68 182 68 192 76 194 C84 192 84 182 76 168 Z"/><text x="76" y="214" text-anchor="middle" class="ts">bebedouro +0,25</text>
+<path d="M164 196 L176 168 L188 196 M170 182 H182" fill="none" stroke="currentColor" stroke-width="2"/><text x="176" y="214" text-anchor="middle" class="ts">brinquedo +0,25</text>
+<circle cx="326" cy="182" r="12" fill="none" stroke="currentColor" stroke-width="2"/><line x1="314" y1="182" x2="338" y2="182" stroke="currentColor"/><text x="326" y="214" text-anchor="middle" class="ts">esporte +0,25</text>
+<rect class="bench" x="396" y="180" width="36" height="8"/><text x="414" y="208" text-anchor="middle" class="ts">outros</text><text x="414" y="221" text-anchor="middle" class="ts">(GT)</text>
+<text x="230" y="234" text-anchor="middle" class="tb">1 m² de área líquida por m² de AFP + acréscimos</text>
+</svg>
+<figcaption>Anexo III, III.2: cada m² de AFP dá 1 m² de área líquida acima do CA básico, mais 0,25 por bebedouro, brinquedo ou equipamento esportivo, 0,5 por atravessamento de quadra e 0,25 por estratégias inclusivas, até o CA máximo. Outros elementos podem ser registrados mesmo sem gerar área.</figcaption>
+<div class="relLinks"><a href="#sim-opcionais">Ir à etapa</a><a href="#t7-afp-fachada">Subsídio</a></div></figure>
 </div>
 
 <h2 class="hHome">As abas</h2>
@@ -734,7 +966,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,su
 <section class="page" data-page="catalogo" hidden><div class="intro"><h1>Catálogo de soluções</h1><p class="lead">Trinta fichas da base v27 vinculadas exclusivamente às condições identificadas na Parte III dos Subsídios v2.2.1. A TP-07 foi atualizada para caixa ampliada ou infiltrante; a cisterna não integra esta versão.</p></div><div class="filterBar"><label for="filterCatalogo">Filtrar por tema</label><select id="filterCatalogo"><option value="todos">Todos os temas</option><option value="AF">Interface frontal</option><option value="TP">Água, solo e vegetação</option><option value="AL">Laterais e fundos</option><option value="FA">Atividade e fruição</option><option value="CT">Calçadas e território</option></select><label for="filterCond">Condição</label><select id="filterCond"><option value="">Todas</option></select><strong id="catCount"></strong></div><div class="note" id="catCobertura" style="margin-bottom:14px"></div><div class="cards2" id="catalogGrid"></div></section>
 <section class="page" data-page="subsidios" hidden><div class="intro"><h1>Subsídios para a norma</h1><p class="lead">Fonte única de texto para a proposição técnica, com conteúdo integral da versão 2.2.1 (19/10/2026). As marcações indicam assuntos ainda abertos.</p><div class="filterBar"><label for="searchSub">Buscar nos subsídios</label><input id="searchSub" type="search" placeholder="Buscar expressão ou condição" autocomplete="off"><span id="buscaQt" class="hint"></span><button class="btn ghost" id="printSubs" type="button">Imprimir</button><button class="btn" id="downloadSubs" type="button">Baixar .md</button></div></div><div class="mdGrid"><aside class="index" id="subsIndex" aria-label="Índice dos subsídios"></aside><article class="mdContent" id="subsBody"></article></div></section>
 <section class="page" data-page="impacto" hidden><div class="intro"><h1>Impacto dos parâmetros</h1><p class="lead">Simulação sobre os identificadores e faces cadastradas na base CTM, por subárea e faixa de testada. Não é projeção anual de empreendimentos nem confirmação de frente voltada a logradouro.</p><div class="filterBar"><label for="filtroSub">Subárea</label><select id="filtroSub"><option value="todos">Todas</option><option value="1A">1A</option><option value="1B">1B</option><option value="2">Área 2</option></select><label for="filtroFaixa">Faixa de testada (maior face)</label><select id="filtroFaixa"><option value="todos">Todas</option><option value="0">&lt; 10 m</option><option value="1">10–15 m</option><option value="2">15–20 m</option><option value="3">20–30 m</option><option value="4">30–60 m</option><option value="5">≥ 60 m</option></select></div></div><div id="impactKpi" class="verdicts"></div><h2>Resultados por subárea e faixa</h2><p class="hint">Árvores: superior / inferior / inferior com mínimo 1. Bases: maior face ou soma das faces cadastrais. Garagem: largura fixa de 3 m; a exceção estreita depende de decisão. Massa: triagem ≥40 / ≥60 / ≥80 m pela maior face.</p><div class="tableWrap"><table class="dataTable"><thead><tr><th>Subárea</th><th>Testada</th><th>Lotes</th><th>Árvores · maior face</th><th>Árvores · soma cadastral</th><th>Garagem sem exceção</th><th>Garagem com exceção</th><th>Lotes com triagem de massa</th></tr></thead><tbody id="impactBody"></tbody></table></div><h2>Conferência com o Anexo B</h2><p class="hint">Testes das seis regras de árvores em cada subárea da Área 1 e dos gatilhos de massa em todas as subáreas.</p><div class="tableWrap"><table class="dataTable"><thead><tr><th>Indicador</th><th>Anexo B</th><th>Calculado</th><th>Resultado</th></tr></thead><tbody id="impactConf"></tbody></table></div><p class="legalNotice">A testada de empreendimento inclui remembramento e todas as frentes reais para logradouro; a base de lotes isolados só permite a aproximação por maior face e soma cadastral. A amostra possui dois registros com faces removidas por inconsistência.</p></section>
-<section class="page" data-page="versoes" hidden><div class="intro"><h1>Versões, verificações e alterações</h1><p class="lead">A v28 substitui a avaliação por pontuação por condições independentes. A conferência abaixo lê a tabela #quadro-condicoes da fonte Markdown embutida e compara cada número com o objeto de parâmetros utilizado nas avaliações.</p></div><h2>Conferência automática · subsídios × parâmetros</h2><p id="confResumo" class="note"></p><div class="tableWrap"><table class="dataTable"><thead><tr><th>Condição</th><th>Valores do quadro normativo</th><th>Parâmetro e valor vigente</th><th>Conferência</th></tr></thead><tbody id="confBody"></tbody></table></div><h2>Conferência automática · catálogo × Subsídios</h2><p id="catConfResumo" class="note"></p><div class="tableWrap"><table class="dataTable"><thead><tr><th>Ficha</th><th>Nome</th><th>Condições</th><th>Aplicação</th><th>Texto da nota</th></tr></thead><tbody id="catConfBody"></tbody></table></div><h2>Testes da v28</h2><div class="tableWrap"><table class="dataTable"><thead><tr><th>ID</th><th>Ensaio</th><th>Resultado</th><th>Evidência</th></tr></thead><tbody id="testRows"></tbody></table></div><h2>Changelog resumido</h2><p><b>v28.1 (19/10/2026) · usabilidade do simulador.</b> Só interface: o motor, os parâmetros e os campos são os mesmos da v28, e o resultado de cada caso é idêntico. Etapas em acordeão com barra de progresso e estado de cada etapa; ícones por etapa e por caminho; mínimo exigido e quanto falta exibidos junto a cada campo; barras da área permeável e do ganho do deck; número de árvores exigido calculado na etapa; fachadas em cartões; resultado filtrado no que falta, com clique da condição para o campo correspondente; documentos do caso reunidos em botões com ícone. Laterais e fundos partem do afastamento legal (item 5.1.2: Tabela 4 do Anexo XII da Lei 11.181, B = 8), calculado pela altura H ou informado; abaixo dele, fachada cega pode chegar à divisa e fachada com aberturas exige o diâmetro de iluminação (item 5.1.1) — mudança do motor nas condições L1, L2 e L3, que agora usa por padrão a soma de dois afastamentos legais. Relação entre caminhos da frente, regras e catálogo explicada na etapa da frente (o que medir, como resolver, se não couber), com quadro comparativo dos cinco caminhos também na aba Regras e filtro por caminho no Catálogo. Ficha de qualificação completa: identificação do empreendimento, resumo por grupo e, para cada condição, o valor exigido, como o projeto atende (medidas e soluções do caso), a situação, a origem do valor e a prova pedida nos Subsídios; trechos, fachadas, área permeável, árvores e AFP detalhados; encaminhamentos ao Grupo Técnico, lista de documentos e valores de referência usados. Área de fruição pública completa no simulador, conforme o Anexo III, III.2: área, critérios da Lei 11.181, pedido de dispensa ou redução da área mínima (III.2.5), equipamentos da tabela (bebedouro, brinquedo, equipamento esportivo, atravessamento de quadra), estratégias inclusivas (III.2.3), outros elementos com ou sem pedido de acréscimo (III.2.4), teto pelo CA e cálculo do acréscimo de área líquida no resultado e na ficha. Acessibilidade e ligações: nova página inicial (por onde começar, quatro ideias do modelo, o que é obrigatório, mapa das abas), explicação de cada etapa do simulador, orientação no topo de cada aba com atalhos para as abas relacionadas, glossário acessível de qualquer aba, ligações de ida e volta entre simulador, regras, catálogo, subsídios e impacto, texto maior, atalho para pular ao conteúdo e contraste reforçado. Subsídios v2.2.1 embutidos (laterais a partir do afastamento legal, A1, definições e coluna Origem). Calculadora de apoio do diâmetro de iluminação (art. 65 da Lei 9.725, a verificar) nas fachadas com aberturas. Cada condição ganhou explicação em linguagem direta (o que mede, o que conta e o que não conta, valor exigido e se o valor vem da lei ou é proposta em decisão), aberta pelo “i” junto ao campo, no resultado, nas fichas, no Catálogo e nas Regras; A1 passou a se chamar “Testada com uso ativo” e o caminho A, “Térreo ativo”, com a definição visível na etapa. Catálogo integrado por navegação (sem mudar regras): fichas que ajudam em cada etapa e em cada grupo do resultado, “como cumprir” nas condições a ajustar, ficha aberta em janela com o estado das condições no caso, coluna de fichas na aba Regras, filtro por condição e quadro de cobertura no Catálogo, e conferência catálogo × Subsídios nesta aba. Área permeável em diagrama (terreno → área permeável → solo, deck e caminho), com sliders que mostram de onde sai e para onde vai cada m², alerta e botão para completar a taxa da lei quando ela não é atingida (T1), e campos marcados em vermelho nesse caso.</p><p>Saem a Matriz pontuada, pesos, recompensa por resultado total e modos de avaliação anteriores. Entra o simulador único por condições, incluindo caminhos A/B/C/R/D, CTM com múltiplas faces, ganho equivalente do deck, fichas para imprimir, subsídios integrais, catálogo reindexado e conferências quantitativas.</p><p><a href="#subsidios">Consultar decisões e questões jurídicas pendentes no texto completo</a>.</p></section>
+<section class="page" data-page="versoes" hidden><div class="intro"><h1>Versões, verificações e alterações</h1><p class="lead">A v28 substitui a avaliação por pontuação por condições independentes. A conferência abaixo lê a tabela #quadro-condicoes da fonte Markdown embutida e compara cada número com o objeto de parâmetros utilizado nas avaliações.</p></div><h2>Conferência automática · subsídios × parâmetros</h2><p id="confResumo" class="note"></p><div class="tableWrap"><table class="dataTable"><thead><tr><th>Condição</th><th>Valores do quadro normativo</th><th>Parâmetro e valor vigente</th><th>Conferência</th></tr></thead><tbody id="confBody"></tbody></table></div><h2>Conferência automática · catálogo × Subsídios</h2><p id="catConfResumo" class="note"></p><div class="tableWrap"><table class="dataTable"><thead><tr><th>Ficha</th><th>Nome</th><th>Condições</th><th>Aplicação</th><th>Texto da nota</th></tr></thead><tbody id="catConfBody"></tbody></table></div><h2>Testes da v28</h2><div class="tableWrap"><table class="dataTable"><thead><tr><th>ID</th><th>Ensaio</th><th>Resultado</th><th>Evidência</th></tr></thead><tbody id="testRows"></tbody></table></div><h2>Changelog resumido</h2><p><b>v28.1 (19/10/2026) · usabilidade do simulador.</b> Só interface: o motor, os parâmetros e os campos são os mesmos da v28, e o resultado de cada caso é idêntico. Etapas em acordeão com barra de progresso e estado de cada etapa; ícones por etapa e por caminho; mínimo exigido e quanto falta exibidos junto a cada campo; barras da área permeável e do ganho do deck; número de árvores exigido calculado na etapa; fachadas em cartões; resultado filtrado no que falta, com clique da condição para o campo correspondente; documentos do caso reunidos em botões com ícone. Laterais e fundos partem do afastamento legal (item 5.1.2: Tabela 4 do Anexo XII da Lei 11.181, B = 8), calculado pela altura H ou informado; abaixo dele, fachada cega pode chegar à divisa e fachada com aberturas exige o diâmetro de iluminação (item 5.1.1) — mudança do motor nas condições L1, L2 e L3, que agora usa por padrão a soma de dois afastamentos legais. Página inicial ilustrada: texto sobre a natureza preliminar dos subsídios e o fluxo proposto (lei → subsídios → Decreto e Portaria → projetos → revisão), diagramas dos cinco caminhos da frente, do fluxo entre solução pré-aceita e solução alternativa, da frente para a rua, das laterais e fundos, das árvores e calçada, do deck e caminho na área permeável e da área de fruição pública, e link para o E-book ilustrado e interativo da OUS Somos Centro. Comentários e edições em Regras, Catálogo e Subsídios para a norma: um lápis discreto em cada item abre comentário ou edição do texto no lugar; tudo fica salvo no navegador, pode ser exportado e importado em JSON (as importações se somam) e a página volta ao padrão com um clique confirmado. As edições mudam só o texto exibido, não os cálculos. Relação entre caminhos da frente, regras e catálogo explicada na etapa da frente (o que medir, como resolver, se não couber), com quadro comparativo dos cinco caminhos também na aba Regras e filtro por caminho no Catálogo. Ficha de qualificação completa: identificação do empreendimento, resumo por grupo e, para cada condição, o valor exigido, como o projeto atende (medidas e soluções do caso), a situação, a origem do valor e a prova pedida nos Subsídios; trechos, fachadas, área permeável, árvores e AFP detalhados; encaminhamentos ao Grupo Técnico, lista de documentos e valores de referência usados. Área de fruição pública completa no simulador, conforme o Anexo III, III.2: área, critérios da Lei 11.181, pedido de dispensa ou redução da área mínima (III.2.5), equipamentos da tabela (bebedouro, brinquedo, equipamento esportivo, atravessamento de quadra), estratégias inclusivas (III.2.3), outros elementos com ou sem pedido de acréscimo (III.2.4), teto pelo CA e cálculo do acréscimo de área líquida no resultado e na ficha. Acessibilidade e ligações: nova página inicial (por onde começar, quatro ideias do modelo, o que é obrigatório, mapa das abas), explicação de cada etapa do simulador, orientação no topo de cada aba com atalhos para as abas relacionadas, glossário acessível de qualquer aba, ligações de ida e volta entre simulador, regras, catálogo, subsídios e impacto, texto maior, atalho para pular ao conteúdo e contraste reforçado. Subsídios v2.2.1 embutidos (laterais a partir do afastamento legal, A1, definições e coluna Origem). Calculadora de apoio do diâmetro de iluminação (art. 65 da Lei 9.725, a verificar) nas fachadas com aberturas. Cada condição ganhou explicação em linguagem direta (o que mede, o que conta e o que não conta, valor exigido e se o valor vem da lei ou é proposta em decisão), aberta pelo “i” junto ao campo, no resultado, nas fichas, no Catálogo e nas Regras; A1 passou a se chamar “Testada com uso ativo” e o caminho A, “Térreo ativo”, com a definição visível na etapa. Catálogo integrado por navegação (sem mudar regras): fichas que ajudam em cada etapa e em cada grupo do resultado, “como cumprir” nas condições a ajustar, ficha aberta em janela com o estado das condições no caso, coluna de fichas na aba Regras, filtro por condição e quadro de cobertura no Catálogo, e conferência catálogo × Subsídios nesta aba. Área permeável em diagrama (terreno → área permeável → solo, deck e caminho), com sliders que mostram de onde sai e para onde vai cada m², alerta e botão para completar a taxa da lei quando ela não é atingida (T1), e campos marcados em vermelho nesse caso.</p><p>Saem a Matriz pontuada, pesos, recompensa por resultado total e modos de avaliação anteriores. Entra o simulador único por condições, incluindo caminhos A/B/C/R/D, CTM com múltiplas faces, ganho equivalente do deck, fichas para imprimir, subsídios integrais, catálogo reindexado e conferências quantitativas.</p><p><a href="#subsidios">Consultar decisões e questões jurídicas pendentes no texto completo</a>.</p></section>
 </main><dialog class="fDlg" id="fichaDlg" aria-labelledby="fdTitle"><form method="dialog" class="fdClose"><button aria-label="Fechar">×</button></form><div id="fdBody"></div></dialog><section id="printArea" aria-label="Ficha para impressão"></section>
 
 <script type="text/markdown" id="subsidios">
@@ -2107,5 +2339,289 @@ function filtro(f){$('groups').classList.toggle('pend',f==='pend');$qa('[data-fi
 function $q(q){return document.querySelector(q)}
 window.__OUS_UX={abrir,melhorar,get last(){return last}};
 iniciar();
+})();
+</script>
+<style id="notas-css">
+/* ---------- comentários e edições (Regras, Catálogo, Subsídios) ---------- */
+.ntBar{margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 12px;display:grid;gap:8px;font-size:12.5px;color:var(--ink-2)}
+.ntBarTop{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
+.ntBarL{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.ntBarL b{color:var(--ink);font-size:13px}
+.ntCount{font-family:var(--mono);font-size:12px;color:var(--accent)}
+.ntBarR{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.ntBar .nb{border:1px solid var(--line);border-radius:999px;padding:4px 10px;font:inherit;font-size:12px;font-weight:650;color:var(--accent);background:var(--panel);cursor:pointer}
+.ntBar .nb:hover{background:var(--accent-soft)}
+.ntBar .nb.ntDanger{color:var(--bad)}
+.ntBar .nb.ntDanger.ntArm{background:var(--bad);color:#fff;border-color:var(--bad)}
+.ntBar input.ntAutor{border:1px solid var(--line);border-radius:7px;padding:4px 8px;font:inherit;font-size:12px;width:170px;background:var(--bg);color:var(--ink)}
+.ntBar label.ntChk{display:inline-flex;gap:4px;align-items:center;white-space:nowrap}
+.ntBar label.ntChk input{width:auto;margin:0}
+.ntMsg:empty{display:none}
+.ntMsg{font-weight:650;color:var(--ok)}.ntMsg.err{color:var(--bad)}
+.ntLista summary{cursor:pointer;color:var(--accent);font-weight:650}
+.ntListaBody{display:grid;gap:8px;margin-top:8px;max-height:340px;overflow:auto}
+.ntListaBody h4{margin:4px 0 0;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.ntListaBody ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.ntListaBody a{color:var(--accent);font-weight:650}
+.ntListaBody .ntEdTag{display:inline-block;margin-left:4px;padding:0 6px;border-radius:999px;background:var(--warn-soft);color:var(--warn);font-size:11px;font-weight:700}
+.ntBtnW{display:inline;white-space:nowrap}
+.ntBtn{display:inline-flex;align-items:center;gap:3px;margin-left:6px;vertical-align:middle;border:1px solid transparent;background:transparent;color:var(--muted);border-radius:6px;padding:2px 5px;font:600 11px/1 var(--sans);cursor:pointer;opacity:.4;text-transform:none;letter-spacing:0}
+.ntBtn svg{width:13px;height:13px}
+[data-ntk]:hover .ntBtn,.ntBtn:focus-visible,.ntBtn:hover{opacity:1;border-color:var(--line);background:var(--panel)}
+.ntBtn.ntHas{opacity:1;color:var(--accent);background:var(--accent-soft)}
+.stepHead>.ntBtnW{margin-left:auto}
+body.ntSemBtn .ntBtnW{display:none}
+body.ntSemNotas .ntNote,body.ntSemNotas .ntNoteRow{display:none}
+p.ntEdited,li.ntEdited,h1.ntEdited,h2.ntEdited,h3.ntEdited,h4.ntEdited{background:var(--warn-soft);border-radius:4px;box-shadow:-6px 0 0 var(--warn-soft)}
+tr.ntEdited>td{background:var(--warn-soft)}
+.catalogCard.ntEdited{border-color:var(--warn);box-shadow:inset 3px 0 0 var(--warn)}
+.ntEditing [contenteditable="true"]{outline:2px dashed var(--accent);outline-offset:2px;background:var(--panel);border-radius:3px}
+.ntFlash{animation:ntFlash 1.6s ease-out}
+@keyframes ntFlash{0%,40%{outline:3px solid var(--accent);outline-offset:3px}100%{outline:3px solid transparent;outline-offset:3px}}
+.ntNote{margin:4px 0 12px;padding:8px 10px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;font:12.5px/1.45 var(--sans);color:var(--ink-2);display:grid;gap:6px;text-transform:none;letter-spacing:0;font-weight:400}
+li>.ntNote{margin:6px 0 4px}
+.catalogCard>.ntNote{margin:4px 0 0}
+.ntNoteRow>td{padding:0 8px 6px!important;border-top:0!important;background:transparent!important}
+.ntNoteRow .ntNote{margin:0}
+.ntC{display:grid;gap:1px}
+.ntC p{margin:0;white-space:pre-wrap;color:var(--ink)}
+.ntC small{color:var(--muted);font-size:11px}
+.ntEdInfo{color:var(--warn);font-weight:650;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center}
+.ntEdInfo button,.ntPop .ntLink{border:0;background:none;padding:0;font:inherit;font-weight:650;color:var(--accent);text-decoration:underline;cursor:pointer}
+.ntWarn{color:var(--bad)}
+.ntOrig{white-space:pre-wrap;color:var(--ink-2);border:1px dashed var(--line);border-radius:6px;padding:6px 8px;background:var(--panel)}
+.ntEditBar{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.ntEditBar b{color:var(--accent)}
+.ntPop{position:absolute;z-index:60;width:350px;max-width:calc(100vw - 16px);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:0 14px 40px #0f1e2a33;padding:12px;display:grid;gap:8px;font-size:13px}
+.ntPop[hidden]{display:none}
+.ntPopH{display:flex;gap:8px;align-items:flex-start;justify-content:space-between}
+.ntPopH b{font-size:13px;line-height:1.35}
+.ntPopH small{display:block;color:var(--muted);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.ntX{border:0;background:none;font-size:20px;line-height:1;color:var(--muted);cursor:pointer;padding:0 4px}
+.ntPopList{display:grid;gap:6px;max-height:200px;overflow:auto}
+.ntPopList .ntC{border:1px solid var(--line-2);border-radius:8px;padding:6px 8px}
+.ntPopList .ntC .ntLink{font-size:11px;justify-self:start}
+.ntPop textarea{width:100%;min-height:72px;resize:vertical;border:1px solid var(--line);border-radius:8px;padding:8px;font:inherit;background:var(--bg);color:var(--ink)}
+.ntPop label{font-weight:650;font-size:12px}
+.ntPopRow{display:flex;flex-wrap:wrap;gap:6px}
+.ntPop .hint{font-size:11.5px}
+@media(max-width:600px){.ntPop{position:fixed;left:8px!important;right:8px;top:auto!important;bottom:8px;width:auto;max-height:80vh;overflow:auto}.ntBar input.ntAutor{width:100%}}
+@media print{.ntBtnW,.ntBar,.ntPop,.ntEditBar{display:none!important}.ntNote{break-inside:avoid}}
+</style>
+<script id="notas-v28-1">
+(function(){'use strict';
+/* ---------- comentários e edições locais: Regras, Catálogo e Subsídios ---------- */
+const LS='ous-qualificacao-anotacoes-v1',LS_AUTOR='ous-anot-autor',LS_BTN='ous-anot-sem-botoes',LS_NOTAS='ous-anot-sem-notas',FORMATO='ous-qualificacao-anotacoes';
+const ABAS={regras:'Regras',catalogo:'Catálogo',subsidios:'Subsídios para a norma'};
+const $=id=>document.getElementById(id),$qa=(q,r=document)=>[...r.querySelectorAll(q)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm=s=>String(s||'').replace(/\s+/g,' ').trim();
+const str=(x,n)=>typeof x==='string'?x.slice(0,n):'';
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+const lsGet=(k,d)=>{try{const v=localStorage.getItem(k);return v==null?d:v}catch(e){return d}};
+const lsSet=(k,v)=>{try{localStorage.setItem(k,v);return true}catch(e){return false}};
+const dataBR=iso=>{const d=new Date(iso);return isNaN(d)?'':d.toLocaleString('pt-BR',{dateStyle:'short',timeStyle:'short'})};
+const ICO='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M11.3 2.2l2.5 2.5-8.2 8.2-3.1.6.6-3.1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>';
+
+let store={itens:{}},salvoOk=true;
+function validar(o){if(!o||typeof o!=='object'||!o.itens||typeof o.itens!=='object')return null;const out={itens:{}};
+ for(const [k,v] of Object.entries(o.itens)){if(typeof k!=='string'||k.length>300||!v||typeof v!=='object')continue;const aba=ABAS[v.aba]?v.aba:k.split('|')[0];if(!ABAS[aba])continue;
+  const it={aba,rotulo:str(v.rotulo,300),comentarios:[]};
+  if(Array.isArray(v.comentarios))for(const c of v.comentarios.slice(0,300))if(c&&typeof c.texto==='string'&&c.texto.trim())it.comentarios.push({id:str(c.id,60)||uid(),texto:str(c.texto,5000),autor:str(c.autor,80),data:str(c.data,40)});
+  const e=v.edicao;if(e&&typeof e==='object'&&e.html&&typeof e.html==='object'){const h={};for(const [i,x] of Object.entries(e.html))if(/^\d{1,2}$/.test(i)&&typeof x==='string')h[i]=x.slice(0,40000);
+   if(Object.keys(h).length)it.edicao={html:h,texto:str(e.texto,40000),original:str(e.original,40000),autor:str(e.autor,80),data:str(e.data,40)}}
+  if(it.comentarios.length||it.edicao)out.itens[k]=it}
+ return out}
+function ler(){try{const v=JSON.parse(localStorage.getItem(LS)||'null');store=(v&&validar(v))||{itens:{}}}catch(e){store={itens:{}}}}
+function gravar(){salvoOk=lsSet(LS,JSON.stringify(store));if(!salvoOk)msg('O navegador não permitiu salvar. Exporte o JSON para não perder as anotações.',true)}
+const autor=()=>norm(lsGet(LS_AUTOR,'')).slice(0,80);
+
+/* ---------- limpeza do HTML editado ou importado ---------- */
+const OK=new Set(['B','STRONG','I','EM','U','S','BR','A','SMALL','CODE','SPAN','SUP','SUB','MARK','DIV','P','UL','OL','LI']);
+const DROP=new Set(['SCRIPT','STYLE','IFRAME','OBJECT','EMBED','IMG','SVG','MATH','FORM','INPUT','BUTTON','SELECT','TEXTAREA','LINK','META','VIDEO','AUDIO','SOURCE','TEMPLATE','CANVAS','NOSCRIPT','BASE','FRAME','FRAMESET','PICTURE','TABLE','DETAILS']);
+function limpar(html){const t=document.createElement('template');t.innerHTML=String(html||'');
+ const walk=n=>{for(const c of [...n.childNodes]){if(c.nodeType===1){const tag=c.tagName.toUpperCase();if(DROP.has(tag)){c.remove();continue}walk(c);
+   if(!OK.has(tag)){c.replaceWith(...c.childNodes);continue}
+   for(const a of [...c.attributes]){const nm=a.name.toLowerCase();const keep=nm==='class'||nm==='title'||(nm==='href'&&tag==='A'&&/^(#|https?:\/\/)/i.test(a.value.trim()));if(!keep)c.removeAttribute(a.name)}
+   if(tag==='MARK'&&c.classList.contains('busca')){c.replaceWith(...c.childNodes);continue}
+   if(tag==='A'&&/^https?:/i.test(c.getAttribute('href')||'')){c.setAttribute('target','_blank');c.setAttribute('rel','noopener noreferrer')}}
+  else if(c.nodeType!==3)c.remove()}};
+ walk(t.content);return t.content}
+const htmlDe=frag=>{const d=document.createElement('div');d.append(frag);return d.innerHTML};
+
+/* elementos interativos ficam fixos: viram marcadores ⟦n⟧ e voltam vivos */
+const INTER='button,input,select,textarea,details,[data-cond],[data-ficha],[data-gocond],[data-go],[data-glossario],[data-tr],[data-catrota],[data-catcond]';
+function topInter(root){return $qa(INTER,root).filter(e=>{if(e.closest('.ntUI'))return false;const p=e.parentElement&&e.parentElement.closest(INTER);return !(p&&root.contains(p))})}
+function tokenizar(t){const c=t.cloneNode(true);$qa('.ntUI',c).forEach(n=>n.remove());$qa('mark.busca',c).forEach(m=>m.replaceWith(...m.childNodes));topInter(c).forEach((el,i)=>el.replaceWith(document.createTextNode('⟦'+i+'⟧')));return c.innerHTML}
+function aplicar(t,html,confiavel){const vivos=topInter(t);let frag;if(confiavel){const tp=document.createElement('template');tp.innerHTML=html;frag=tp.content}else frag=limpar(html);
+ const w=document.createTreeWalker(frag,NodeFilter.SHOW_TEXT),ns=[];while(w.nextNode())ns.push(w.currentNode);const usados=new Set();
+ for(const n of ns){const partes=n.textContent.split(/⟦(\d+)⟧/);if(partes.length===1)continue;const out=[];partes.forEach((p,i)=>{if(i%2===0){if(p)out.push(document.createTextNode(p))}else{const el=vivos[+p];if(el&&!usados.has(el)){usados.add(el);out.push(el)}}});n.replaceWith(...out)}
+ t.replaceChildren(frag)}
+function texto(el){if(!el)return'';const c=el.cloneNode(true);$qa('.ntUI,.iDot',c).forEach(n=>n.remove());return norm(c.textContent)}
+const textoAlvos=ts=>ts.map(texto).filter(Boolean).join(' | ');
+const comparavel=h=>htmlDe(limpar(h)).replace(/\s+/g,' ').trim();
+
+/* ---------- registro dos itens ---------- */
+const reg=new Map();let editando=null,vistos=new Set();
+const KIND={
+ p:{alvos:el=>[el],host:el=>el,nota:'after'},
+ h:{alvos:el=>[el],host:el=>el,nota:'after'},
+ li:{alvos:el=>[el],host:el=>el,nota:'append'},
+ tr:{alvos:el=>[...el.cells],host:el=>el.cells[Math.min(1,el.cells.length-1)],nota:'row'},
+ card:{alvos:el=>[el.querySelector(':scope>h3'),...el.querySelectorAll(':scope>p')].filter(Boolean),host:el=>el.querySelector(':scope>.stepHead')||el,nota:'append'}};
+function item(s){let k=s.key,n=1;while(vistos.has(k))k=s.key+'~'+(++n);s.key=k;vistos.add(k);
+ const old=reg.get(k);
+ if(old&&old.el===s.el&&s.el.dataset.ntk===k){old.rotulo=s.rotulo;if(!s.el.querySelector('.ntBtnW'))atualizar(old);return}
+ if(s.el.dataset.ntk&&s.el.dataset.ntk!==k){const o=reg.get(s.el.dataset.ntk);if(o&&o.el===s.el)desmontar(o)}
+ const it={...s,...KIND[s.kind],orig:null,origTxt:'',aplicado:false,nota:null};it.el.dataset.ntk=k;reg.set(k,it);atualizar(it)}
+function desmontar(it){if(it.aplicado&&it.orig)it.alvos(it.el).forEach((t,i)=>aplicar(t,it.orig[i],true));$qa('.ntBtnW',it.el).forEach(n=>n.remove());it.nota?.remove();it.el.classList.remove('ntEdited');delete it.el.dataset.ntk;reg.delete(it.key)}
+function capturar(it){const ts=it.alvos(it.el);it.orig=ts.map(tokenizar);it.origTxt=textoAlvos(ts)}
+function atualizar(it){if(!it.el.isConnected)return;const d=store.itens[it.key],ed=d&&d.edicao,ts=it.alvos(it.el);
+ if(ed){if(!it.orig)capturar(it);ts.forEach((t,i)=>ed.html[i]!=null?aplicar(t,ed.html[i],false):aplicar(t,it.orig[i],true));it.aplicado=true}
+ else if(it.aplicado){ts.forEach((t,i)=>aplicar(t,it.orig[i],true));it.aplicado=false}
+ it.el.classList.toggle('ntEdited',!!ed);botao(it,d);nota(it,d)}
+function botao(it,d){const host=it.host(it.el);if(!host)return;let w=host.querySelector(':scope>.ntBtnW');
+ if(!w){w=document.createElement('span');w.className='ntBtnW ntUI';w.contentEditable='false';host.append(w)}
+ const nc=d?d.comentarios.length:0,lab=(nc?nc+(nc>1?' comentários':' comentário'):'')+(d&&d.edicao?(nc?' e ':'')+'texto editado':'');
+ w.innerHTML=`<button type="button" class="ntBtn${d?' ntHas':''}" data-ntbtn="${esc(it.key)}" aria-label="Comentar ou editar: ${esc(it.rotulo)}${lab?' ('+lab+')':''}" title="Comentar ou editar${lab?' · '+lab:''}">${ICO}${nc?`<span>${nc}</span>`:''}</button>`}
+function nota(it,d){const precisa=!!d||editando===it;
+ if(!precisa){it.nota?.remove();it.nota=null;return}
+ let box=it.nota&&it.nota.isConnected?it.nota:null;
+ if(!box){box=document.createElement('div');box.className='ntNote ntUI';box.contentEditable='false';
+  if(it.kind==='tr'){const tr=document.createElement('tr');tr.className='ntNoteRow ntUI';const td=document.createElement('td');td.colSpan=it.el.cells.length||1;td.append(box);tr.append(td);it.el.after(tr);it.nota=tr}
+  else if(KIND[it.kind].nota==='append'){it.el.append(box);it.nota=box}
+  else{it.el.after(box);it.nota=box}}
+ if(it.kind==='tr')box=it.nota.querySelector('.ntNote');
+ box.dataset.ntfor=it.key;let h='';
+ if(editando===it)h+=`<div class="ntEditBar"><b>Editando o texto</b><button type="button" class="btn" data-ntact="salvar">Salvar edição</button><button type="button" class="btn ghost" data-ntact="cancelar">Cancelar</button><span class="hint">Ctrl+Enter salva · Esc cancela. Botões e links do item ficam como estão.</span></div>`;
+ if(d&&d.edicao){const e=d.edicao,mudou=e.original&&it.origTxt&&norm(e.original)!==norm(it.origTxt);
+  h+=`<div class="ntEdInfo"><span>Texto editado${e.autor?' por '+esc(e.autor):''}${e.data?' em '+esc(dataBR(e.data)):''}.</span><button type="button" data-ntact="orig">Ver original</button><button type="button" data-ntact="restaurar">Restaurar original</button>${mudou?'<span class="ntWarn">O texto-base mudou desde esta edição; confira.</span>':''}</div><div class="ntOrig" hidden>${esc(it.origTxt||e.original)}</div>`}
+ if(d)for(const c of d.comentarios)h+=`<div class="ntC"><p>${esc(c.texto)}</p><small>${esc(c.autor||'Sem nome')}${c.data?' · '+esc(dataBR(c.data)):''}</small></div>`;
+ box.innerHTML=h}
+
+/* ---------- varredura das três abas ---------- */
+function slug(s){return norm(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,40)}
+function varrerRegras(){const body=$('regrasBody');if(!body)return;
+ for(const art of body.querySelectorAll(':scope>article')){const gn=texto(art.querySelector('h3')),g=slug(gn);
+  art.querySelectorAll(':scope>p').forEach((p,i)=>{const lab=texto(p.querySelector('b')).replace(/:$/,'')||'parágrafo '+(i+1);item({el:p,key:`regras|${g}|p${i+1}`,aba:'regras',rotulo:`${gn} · ${lab}`,kind:'p'})});
+  for(const tr of art.querySelectorAll(':scope>.mdtable>table>tbody>tr:not(.ntUI)')){const td=tr.cells[0];if(!td)continue;const id=norm(td.firstChild?td.firstChild.textContent:'')||texto(td).slice(0,30);
+   item({el:tr,key:`regras|${g}|${id}`,aba:'regras',rotulo:`${gn} · ${id} ${texto(tr.cells[1]).slice(0,70)}`,kind:'tr'})}}}
+function varrerCatalogo(){const g=$('catalogGrid');if(!g)return;
+ for(const card of g.querySelectorAll(':scope>.catalogCard')){const code=texto(card.querySelector('.tag'));if(!code)continue;item({el:card,key:`catalogo|${code}`,aba:'catalogo',rotulo:`${code} · ${texto(card.querySelector('h3'))}`,kind:'card'})}}
+function varrerSubs(){const body=$('subsBody');if(!body||!body.children.length)return;let sec='topo',secT='Abertura',cnt={};const n=k=>(cnt[k]=(cnt[k]||0)+1);
+ for(const c of [...body.children]){if(c.classList.contains('ntUI')||c.classList.contains('subsLinks'))continue;const tg=c.tagName;
+  if(/^H[1-4]$/.test(tg)){sec=c.id||slug(c.textContent);secT=texto(c);cnt={};item({el:c,key:`subsidios|${sec}|h`,aba:'subsidios',rotulo:secT+' (título)',kind:'h'});continue}
+  if(tg==='P'){const i=n('p');item({el:c,key:`subsidios|${sec}|p${i}`,aba:'subsidios',rotulo:`${secT} · parágrafo ${i}: ${texto(c).slice(0,60)}`,kind:'p'})}
+  else if(tg==='OL'||tg==='UL'){for(const li of c.children){if(li.tagName!=='LI')continue;const i=n('li');item({el:li,key:`subsidios|${sec}|li${i}`,aba:'subsidios',rotulo:`${secT} · item ${i}: ${texto(li).slice(0,60)}`,kind:'li'})}}
+  else if(c.classList.contains('mdtable')){const t=n('t'),rep={};for(const tr of c.querySelectorAll('tbody>tr:not(.ntUI)')){let id=texto(tr.cells[0]).slice(0,40)||'linha';rep[id]=(rep[id]||0)+1;if(rep[id]>1)id+=' #'+rep[id];
+    item({el:tr,key:`subsidios|${sec}|t${t}|${id}`,aba:'subsidios',rotulo:`${secT} · tabela ${t}: ${id}`,kind:'tr'})}}}}
+let pausa=false,tmr=0;
+const mo=new MutationObserver(()=>{if(pausa)return;clearTimeout(tmr);tmr=setTimeout(varrer,80)});
+function varrer(){pausa=true;try{vistos=new Set();varrerRegras();varrerCatalogo();varrerSubs();for(const [k,it] of reg)if(!it.el.isConnected)reg.delete(k)}catch(e){console.error('[anotações]',e)}finally{mo.takeRecords();pausa=false}}
+function comPausa(f){pausa=true;try{return f()}finally{mo.takeRecords();pausa=false}}
+
+/* ---------- popover ---------- */
+let pop,popIt=null,popBtn=null;
+function criarPop(){pop=document.createElement('div');pop.className='ntPop ntUI';pop.id='ntPop';pop.setAttribute('role','dialog');pop.setAttribute('aria-labelledby','ntPopT');pop.hidden=true;document.body.append(pop);
+ pop.addEventListener('keydown',e=>{if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)&&e.target.id==='ntTxt'){e.preventDefault();comentar()}})}
+function abrir(key,btn){const it=reg.get(key);if(!it)return;popIt=it;popBtn=btn;desenharPop();pop.hidden=false;posicionar();setTimeout(()=>$('ntTxt')?.focus(),0)}
+function posicionar(){if(!popBtn||!popBtn.isConnected)return;const r=popBtn.getBoundingClientRect(),w=Math.min(350,innerWidth-16);
+ pop.style.left=Math.max(8+scrollX,Math.min(r.left+scrollX-w+r.width+8,scrollX+innerWidth-w-8))+'px';pop.style.top=(r.bottom+scrollY+6)+'px'}
+function fecharPop(foco){if(!pop||pop.hidden)return;pop.hidden=true;if(foco&&popBtn&&popBtn.isConnected)popBtn.focus();popIt=null}
+function desenharPop(){const it=popIt,d=store.itens[it.key];
+ pop.innerHTML=`<div class="ntPopH"><div><small>${esc(ABAS[it.aba])}</small><b id="ntPopT">${esc(it.rotulo)}</b></div><button type="button" class="ntX" data-ntpop="fechar" aria-label="Fechar">×</button></div>
+ ${d&&d.comentarios.length?`<div class="ntPopList">${d.comentarios.map(c=>`<div class="ntC"><p>${esc(c.texto)}</p><small>${esc(c.autor||'Sem nome')}${c.data?' · '+esc(dataBR(c.data)):''}</small><button type="button" class="ntLink" data-ntdel="${esc(c.id)}">Excluir comentário</button></div>`).join('')}</div>`:''}
+ <label for="ntTxt">Novo comentário</label><textarea id="ntTxt" placeholder="Sugestão, dúvida ou observação sobre este item"></textarea>
+ <div class="ntPopRow"><button type="button" class="btn" data-ntpop="comentar">Salvar comentário</button><button type="button" class="btn ghost" data-ntpop="editar">${d&&d.edicao?'Editar de novo':'Editar texto'}</button>${d&&d.edicao?'<button type="button" class="btn ghost" data-ntpop="restaurar">Restaurar original</button>':''}</div>
+ <p class="hint">${autor()?'Comentários assinados como '+esc(autor())+'. ':'Informe seu nome na barra de anotações para assinar. '}Tudo fica salvo neste navegador; exporte o JSON para compartilhar.${it.aba!=='subsidios'?' Editar muda só o texto exibido; os cálculos do simulador não mudam.':''}</p>`}
+function comentar(){const it=popIt,t=norm($('ntTxt').value)?$('ntTxt').value.trim():'';if(!it||!t){$('ntTxt')?.focus();return}
+ const d=store.itens[it.key]||(store.itens[it.key]={aba:it.aba,rotulo:it.rotulo,comentarios:[]});d.rotulo=it.rotulo;
+ d.comentarios.push({id:uid(),texto:t.slice(0,5000),autor:autor(),data:new Date().toISOString()});gravar();comPausa(()=>atualizar(it));barras();
+ popBtn=it.host(it.el)?.querySelector('.ntBtn')||popBtn;desenharPop();posicionar();$('ntTxt').focus();msg('Comentário salvo.')}
+function limparVazio(k){const d=store.itens[k];if(d&&!d.comentarios.length&&!d.edicao)delete store.itens[k]}
+
+/* ---------- edição no lugar ---------- */
+function editar(it){fecharPop();if(editando)cancelar();if(!it.el.isConnected)return;editando=it;
+ comPausa(()=>{if(!it.orig)capturar(it);const ts=it.alvos(it.el);it.snap=ts.map(tokenizar);it.el.classList.add('ntEditing');
+  ts.forEach(t=>{t.contentEditable='true';topInter(t).forEach(e=>{e.contentEditable='false';e.dataset.ntce='1'})});nota(it,store.itens[it.key])});
+ const t0=it.alvos(it.el)[0];t0?.focus();try{const r=document.createRange();r.selectNodeContents(t0);r.collapse(false);const s=getSelection();s.removeAllRanges();s.addRange(r)}catch(e){}
+ msg('Editando: altere o texto destacado e salve.')}
+function sairEdicao(it){it.el.classList.remove('ntEditing');it.alvos(it.el).forEach(t=>{t.removeAttribute('contenteditable');$qa('[data-ntce]',t).forEach(e=>{e.removeAttribute('contenteditable');delete e.dataset.ntce})});editando=null}
+function salvar(){const it=editando;if(!it)return;if(!it.el.isConnected){editando=null;return}
+ comPausa(()=>{const ts=it.alvos(it.el),atual=ts.map(tokenizar),html={};
+  atual.forEach((h,i)=>{if(comparavel(h)!==comparavel(it.orig[i]))html[i]=htmlDe(limpar(h))});
+  const txt=textoAlvos(ts);sairEdicao(it);const d=store.itens[it.key]||(store.itens[it.key]={aba:it.aba,rotulo:it.rotulo,comentarios:[]});d.rotulo=it.rotulo;
+  if(Object.keys(html).length){d.edicao={html,texto:txt,original:it.origTxt,autor:autor(),data:new Date().toISOString()};msg('Edição salva.')}
+  else{delete d.edicao;msg('Sem mudança no texto; nada foi salvo.')}
+  limparVazio(it.key);gravar();atualizar(it)});barras();it.host(it.el)?.querySelector('.ntBtn')?.focus()}
+function cancelar(){const it=editando;if(!it)return;comPausa(()=>{if(it.el.isConnected){it.alvos(it.el).forEach((t,i)=>aplicar(t,it.snap[i],true));sairEdicao(it);atualizar(it)}else editando=null})}
+function restaurar(it){const d=store.itens[it.key];if(!d||!d.edicao)return;delete d.edicao;limparVazio(it.key);gravar();comPausa(()=>atualizar(it));barras();msg('Texto original restaurado.')}
+
+/* ---------- barra: contagem, lista, exportar, importar, padrão ---------- */
+function contar(){let c=0,e=0;for(const v of Object.values(store.itens)){c+=v.comentarios.length;if(v.edicao)e++}return{c,e}}
+function barraHTML(aba){return `<div class="ntBar ntUI" data-ntaba="${aba}"><div class="ntBarTop"><div class="ntBarL"><b>Comentários e edições</b><span class="ntCount"></span><span class="hint">Use o lápis ao lado de cada item. Fica salvo neste navegador.</span></div>
+ <div class="ntBarR"><label class="ntChk"><input type="checkbox" data-ntopt="btn"> Botões</label><label class="ntChk"><input type="checkbox" data-ntopt="notas"> Comentários</label>
+ <input class="ntAutor" type="text" maxlength="80" placeholder="Seu nome (opcional)" aria-label="Seu nome, para assinar comentários e edições">
+ <button type="button" class="nb" data-ntbar="exportar">Exportar JSON</button><button type="button" class="nb" data-ntbar="importar" title="Junta as anotações do arquivo às que já estão aqui">Importar JSON</button><button type="button" class="nb ntDanger" data-ntbar="padrao" title="Apaga todos os comentários e edições deste navegador">Restaurar padrão</button></div></div>
+ <details class="ntLista"><summary>Ver todas as anotações</summary><div class="ntListaBody"></div></details><div class="ntMsg" role="status" aria-live="polite"></div>
+ ${aba==='subsidios'?'<p class="hint" style="margin:0">Imprimir inclui as edições e os comentários visíveis; “Baixar .md” traz o texto original dos subsídios.</p>':''}</div>`}
+function instalarBarras(){for(const aba of Object.keys(ABAS)){const intro=document.querySelector(`section.page[data-page="${aba}"] .intro`);if(intro&&!intro.querySelector('.ntBar'))intro.insertAdjacentHTML('beforeend',barraHTML(aba))}barras()}
+function barras(){const {c,e}=contar(),total=Object.keys(store.itens).length;
+ const lista=Object.keys(ABAS).map(a=>{const its=Object.entries(store.itens).filter(([,v])=>v.aba===a);if(!its.length)return'';
+  return `<h4>${esc(ABAS[a])} (${its.length})</h4><ul>${its.map(([k,v])=>`<li><a href="#${a}" data-ntgo="${esc(k)}">${esc(v.rotulo||k)}</a>${v.edicao?'<span class="ntEdTag">editado</span>':''}${v.comentarios.length?` · ${esc(v.comentarios[v.comentarios.length-1].texto.slice(0,90))}${v.comentarios.length>1?` <small>(+${v.comentarios.length-1})</small>`:''}`:''}</li>`).join('')}</ul>`}).join('')||'<p class="hint">Nenhuma anotação ainda.</p>';
+ for(const b of $qa('.ntBar')){b.querySelector('.ntCount').textContent=`${c} ${c===1?'comentário':'comentários'} · ${e} ${e===1?'edição':'edições'}`;b.querySelector('.ntListaBody').innerHTML=lista;
+  b.querySelector('summary').textContent=`Ver todas as anotações (${total})`;const inp=b.querySelector('.ntAutor');if(document.activeElement!==inp)inp.value=autor();
+  b.querySelector('[data-ntopt="btn"]').checked=lsGet(LS_BTN,'')!=='1';b.querySelector('[data-ntopt="notas"]').checked=lsGet(LS_NOTAS,'')!=='1'}
+ document.body.classList.toggle('ntSemBtn',lsGet(LS_BTN,'')==='1');document.body.classList.toggle('ntSemNotas',lsGet(LS_NOTAS,'')==='1')}
+let msgT=0;function msg(t,erro){for(const m of $qa('.ntMsg')){m.textContent=t;m.classList.toggle('err',!!erro)}clearTimeout(msgT);msgT=setTimeout(()=>$qa('.ntMsg').forEach(m=>m.textContent=''),erro?9000:3500)}
+function exportar(){const dados={formato:FORMATO,versao:1,plataforma:'OUS Somos Centro · Qualificação urbana v28.1',exportado:new Date().toISOString(),autor:autor(),itens:store.itens};
+ const blob=new Blob([JSON.stringify(dados,null,1)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`anotacoes_qualificacao_OUS_${new Date().toISOString().slice(0,10)}.json`;document.body.append(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500);
+ const {c,e}=contar();msg(`Exportado: ${c} comentário(s) e ${e} edição(ões).`)}
+let fileIn;function importar(){if(!fileIn){fileIn=document.createElement('input');fileIn.type='file';fileIn.accept='.json,application/json';fileIn.hidden=true;document.body.append(fileIn);
+  fileIn.addEventListener('change',()=>{const f=fileIn.files[0];fileIn.value='';if(!f)return;if(f.size>5e6){msg('Arquivo grande demais (máx. 5 MB).',true);return}
+   f.text().then(t=>{let o;try{o=JSON.parse(t)}catch(e){msg('O arquivo não é um JSON válido.',true);return}
+    if(o&&o.formato&&o.formato!==FORMATO){msg('Este JSON não é de anotações desta plataforma.',true);return}
+    const v=validar(o);if(!v){msg('Nenhuma anotação reconhecida no arquivo.',true);return}
+    let nc=0,ne=0;for(const [k,x] of Object.entries(v.itens)){const cur=store.itens[k]||(store.itens[k]={aba:x.aba,rotulo:x.rotulo,comentarios:[]});if(!cur.rotulo)cur.rotulo=x.rotulo;
+     const ids=new Set(cur.comentarios.map(c=>c.id));for(const c of x.comentarios)if(!ids.has(c.id)){cur.comentarios.push(c);nc++}cur.comentarios.sort((a,b)=>(a.data||'').localeCompare(b.data||''));
+     if(x.edicao&&(!cur.edicao||(x.edicao.data||'')>(cur.edicao.data||''))){cur.edicao=x.edicao;ne++}}
+    gravar();if(editando)cancelar();comPausa(()=>reg.forEach(atualizar));barras();msg(`Importado: ${nc} comentário(s) novo(s) e ${ne} edição(ões).`)})})}
+ fileIn.click()}
+let armado=0;function padrao(btn){if(!btn.classList.contains('ntArm')){const n=Object.keys(store.itens).length;if(!n){msg('Não há anotações; a página já está no padrão.');return}
+  $qa('[data-ntbar="padrao"]').forEach(b=>{b.classList.add('ntArm');b.textContent=`Confirmar: apagar ${n} item(ns) anotado(s)`});clearTimeout(armado);armado=setTimeout(desarmar,6000);return}
+ desarmar();if(editando)cancelar();fecharPop();store={itens:{}};try{localStorage.removeItem(LS)}catch(e){}lsSet(LS_BTN,'');lsSet(LS_NOTAS,'');comPausa(()=>reg.forEach(atualizar));barras();msg('Página restaurada ao padrão. Exporte antes, se quiser guardar as anotações.')}
+function desarmar(){clearTimeout(armado);$qa('[data-ntbar="padrao"]').forEach(b=>{b.classList.remove('ntArm');b.textContent='Restaurar padrão'})}
+function irPara(k,aba){const achar=()=>document.querySelector(`[data-ntk="${CSS.escape(k)}"]`);
+ const mostrar=el=>{el.scrollIntoView({block:'center'});el.classList.remove('ntFlash');void el.offsetWidth;el.classList.add('ntFlash');setTimeout(()=>el.classList.remove('ntFlash'),1700)};
+ if(location.hash!=='#'+aba)location.hash=aba;
+ setTimeout(()=>{varrer();let el=achar();
+  if(!el&&aba==='catalogo'){for(const [id,v] of [['filterRota',''],['filterCatalogo','todos'],['filterCond','']]){const s=$(id);if(s&&s.value!==v){s.value=v;s.dispatchEvent(new Event('change',{bubbles:true}))}}setTimeout(()=>{varrer();const e2=achar();e2?mostrar(e2):msg('Item não encontrado nesta versão da página.',true)},200);return}
+  el?mostrar(el):msg('Item não encontrado nesta versão da página; o texto-base pode ter mudado.',true)},250)}
+
+/* ---------- eventos ---------- */
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-ntbtn]');if(b){e.preventDefault();e.stopPropagation();if(popIt&&popIt.key===b.dataset.ntbtn&&!pop.hidden){fecharPop(true);return}abrir(b.dataset.ntbtn,b);return}
+ const act=e.target.closest('[data-ntact]');if(act){e.preventDefault();e.stopPropagation();const k=act.closest('[data-ntfor]')?.dataset.ntfor,it=reg.get(k),a=act.dataset.ntact;
+  if(a==='salvar')salvar();else if(a==='cancelar')cancelar();else if(a==='restaurar'&&it)restaurar(it);else if(a==='orig'){const o=act.closest('.ntNote').querySelector('.ntOrig');o.hidden=!o.hidden;act.textContent=o.hidden?'Ver original':'Ocultar original'}return}
+ if(pop&&!pop.hidden&&pop.contains(e.target)){const p=e.target.closest('[data-ntpop]'),del=e.target.closest('[data-ntdel]');
+  if(p){const a=p.dataset.ntpop;if(a==='fechar')fecharPop(true);else if(a==='comentar')comentar();else if(a==='editar')editar(popIt);else if(a==='restaurar'){const it=popIt;restaurar(it);desenharPop()}}
+  else if(del){const d=store.itens[popIt.key];if(d){d.comentarios=d.comentarios.filter(c=>c.id!==del.dataset.ntdel);limparVazio(popIt.key);gravar();comPausa(()=>atualizar(popIt));barras();popBtn=popIt.host(popIt.el)?.querySelector('.ntBtn')||popBtn;desenharPop();msg('Comentário excluído.')}}
+  return}
+ if(pop&&!pop.hidden)fecharPop(false);
+ const bar=e.target.closest('[data-ntbar]');if(bar){const a=bar.dataset.ntbar;if(a==='exportar')exportar();else if(a==='importar')importar();else if(a==='padrao')padrao(bar);return}
+ const go=e.target.closest('[data-ntgo]');if(go){e.preventDefault();irPara(go.dataset.ntgo,go.getAttribute('href').slice(1))}
+},true);
+document.addEventListener('change',e=>{const o=e.target.closest('[data-ntopt]');if(o){lsSet(o.dataset.ntopt==='btn'?LS_BTN:LS_NOTAS,o.checked?'':'1');barras()}});
+document.addEventListener('input',e=>{if(e.target.classList&&e.target.classList.contains('ntAutor')){lsSet(LS_AUTOR,e.target.value.slice(0,80));for(const i of $qa('.ntAutor'))if(i!==e.target)i.value=e.target.value}});
+document.addEventListener('keydown',e=>{
+ if(editando&&editando.el.contains(e.target)){if(e.key==='Escape'){e.preventDefault();e.stopPropagation();cancelar();return}if(e.key==='Enter'&&(e.ctrlKey||e.metaKey)){e.preventDefault();salvar();return}}
+ if(e.key==='Escape'&&pop&&!pop.hidden){e.stopPropagation();fecharPop(true)}},true);
+document.addEventListener('paste',e=>{if(!editando||!editando.el.contains(e.target))return;e.preventDefault();const t=(e.clipboardData||window.clipboardData).getData('text/plain');document.execCommand('insertText',false,t)},true);
+addEventListener('resize',()=>{if(pop&&!pop.hidden)posicionar()});
+addEventListener('storage',e=>{if(e.key===LS||e.key===null){ler();comPausa(()=>reg.forEach(atualizar));barras()}});
+
+function iniciar(){ler();criarPop();instalarBarras();for(const id of ['regrasBody','catalogGrid','subsBody']){const el=$(id);if(el)mo.observe(el,{childList:true,subtree:true})}varrer();
+ window.__OUS_NOTAS={store:()=>store,varrer,reg}}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
 })();
 </script></body></html>
