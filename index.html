@@ -487,7 +487,24 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,su
 #jsonTxt{width:100%;min-height:220px;max-height:50vh;font:12px/1.4 var(--mono);border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--bg);color:var(--ink);resize:vertical;box-sizing:border-box}
 #jsonDlg .actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}#jsonMsg{font-size:13px}
 #jsonArq{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-#fxApp{--fx-ok:var(--ok);--fx-ok-s:var(--ok-soft);--fx-gt:var(--warn);--fx-gt-s:var(--warn-soft);--fx-part:var(--accent);--fx-part-s:var(--accent-soft);display:grid;gap:18px;min-width:0}
+lei-ref:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+lei-ref { text-decoration-line: underline; text-decoration-style: dotted; text-decoration-color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1.5px; cursor: help; border-radius: 3px; }
+lei-ref:hover, lei-ref[aria-expanded="true"] { background: var(--accent-soft); color: var(--accent); }
+.leiPop { position: fixed; z-index: 200; max-height: min(60vh, 520px); display: grid; grid-template-rows: auto 1fr auto; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; box-shadow: rgba(0, 0, 0, 0.18) 0px 12px 32px; font-size: 14px; }
+.leiPop[hidden] { display: none; }
+.lpHead { display: flex; justify-content: space-between; gap: 10px; align-items: start; padding: 10px 12px 8px; border-bottom: 1px solid var(--line); }
+.lpHead small { display: block; font-size: 11.5px; color: var(--muted); font-weight: 650; }
+.lpHead b { font-size: 14px; }
+.lpX { border: 0px; background: none; font-size: 22px; line-height: 1; color: var(--muted); cursor: pointer; padding: 0px 4px; }
+.lpBody { overflow: auto; padding: 8px 12px; display: grid; gap: 10px; }
+.lpArt b { font-size: 13px; color: var(--accent); }
+.lpL { margin: 4px 0px 0px; padding-left: calc(var(--i,0)*14px); line-height: 1.45; }
+.lpL.dim { color: var(--muted); font-size: 13px; }
+.lpL.sel { color: var(--ink); }
+.lpFoot { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.lpFoot button { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-optical-sizing: inherit; font-size-adjust: inherit; font-kerning: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-weight: 650; color: var(--accent); background: var(--panel); cursor: pointer; }
+@media print{lei-ref { text-decoration: none; background: none !important; color: inherit !important; }}
+@media print{.leiPop { display: none !important; }}#fxApp{--fx-ok:var(--ok);--fx-ok-s:var(--ok-soft);--fx-gt:var(--warn);--fx-gt-s:var(--warn-soft);--fx-part:var(--accent);--fx-part-s:var(--accent-soft);display:grid;gap:18px;min-width:0}
 #fxApp .fxIdx{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13.5px;padding:10px 14px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}
 #fxApp .fxIdx a{text-decoration:none;color:var(--accent);font-weight:600}
 #fxApp .fxSec{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;scroll-margin-top:84px;min-width:0}
@@ -606,6 +623,11 @@ html.fxMaxOn{overflow:hidden}
 #fxApp .fxNd>.fxNb{max-height:560px;overflow:auto;overscroll-behavior:contain}
 #fxApp .fxNd>.fxNb::-webkit-scrollbar{width:8px}#fxApp .fxNd>.fxNb::-webkit-scrollbar-thumb{background:var(--line);border-radius:4px}
 @media print{#fxApp .fxNd>.fxNb{max-height:none;overflow:visible}}
+
+a.refInt{color:var(--accent);text-decoration:underline;text-decoration-style:solid;text-underline-offset:2px;text-decoration-thickness:1px}a.refInt:hover{background:var(--accent-soft)}
+.refAlvo:target td,.mdContent :target{animation:alvoPisca 2.2s ease-out}
+@keyframes alvoPisca{0%,40%{background:var(--accent-soft)}100%{background:transparent}}
+@media print{a.refInt{color:inherit;text-decoration:none}}
 </style><style id="notas-css">
 /* ---------- comentários e edições (Regras, Catálogo, Subsídios) ---------- */
 .ntBar{margin-top:14px;border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:10px 12px;display:grid;gap:8px;font-size:12.5px;color:var(--ink-2)}
@@ -1802,7 +1824,7 @@ function renderMarkdown(md){const lines=md.replace(/\r/g,'').split('\n');let htm
  if(/^\s*\|/.test(raw)&&/^\s*\|/.test(lines[i+1]||'')&&/^\s*\|\s*:?-{2,}/.test(lines[i+1])){close();let rows=[];while(i<lines.length&&/^\s*\|/.test(lines[i]))rows.push(lines[i++].trim().replace(/^\|/,'').replace(/\|$/,'').split('|').map(x=>x.trim()));const head=rows.shift();rows.shift();html.push('<div class="mdtable"><table><thead><tr>'+head.map(x=>`<th>${inlineMd(x)}</th>`).join('')+'</tr></thead><tbody>'+rows.map(c=>'<tr>'+c.map(v=>`<td>${inlineMd(v)}</td>`).join('')+'</tr>').join('')+'</tbody></table></div>');continue}
  const sm=raw.match(/^\s{3,}[-*]\s+(.+)/);if(sm&&depth&&html.length&&/<\/li>$/.test(html[html.length-1])){let last=html.pop();if(/<\/ul><\/li>$/.test(last)&&last.includes('<ul class="subl">'))last=last.slice(0,-10)+`<li>${inlineMd(sm[1])}</li></ul></li>`;else last=last.slice(0,-5)+`<ul class="subl"><li>${inlineMd(sm[1])}</li></ul></li>`;html.push(last);i++;continue}const m=raw.match(/^\s*(?:([-*])|(\d+)\.)\s+(.+)/);if(m){const d=m[2]?2:1;if(depth!==d){close();html.push(d===1?'<ul>':'<ol>');depth=d}html.push(`<li${m[2]?` value="${m[2]}"`:''}>${inlineMd(m[3])}</li>`);i++;continue}close();if(!raw.trim()){i++;continue}if(/^---+$/.test(raw)){html.push('<hr>');i++;continue}let paras=[raw.trim()];while(i+1<lines.length&&lines[i+1].trim()&&!/^(?:#{1,6} |\s*\||\s*[-*] |\s*\d+\. |>)/.test(lines[i+1]))paras.push(lines[++i].trim());html.push(`<p>${inlineMd(paras.join(' '))}</p>`);i++}close();return{html:html.join('\n'),side};}
 let subsReady=false;
-function renderSubs(){if(subsReady)return;const c=renderMarkdown(SUB);$('subsBody').innerHTML=c.html;$('subsIndex').innerHTML=c.side.filter(x=>x.nivel<=2||(x.nivel===3&&/^Seção /.test(x.titulo))).map(x=>`<a class="ind${x.nivel}" href="#${x.id}">${escapeHtml(x.titulo)}</a>`).join('');subsReady=true;}
+function renderSubs(){if(subsReady)return;const c=renderMarkdown(SUB);$('subsBody').innerHTML=c.html;$('subsIndex').innerHTML=c.side.filter(x=>x.nivel<=2||(x.nivel===3&&/^Seção /.test(x.titulo))).map(x=>`<a class="ind${x.nivel}" href="#${x.id}">${escapeHtml(x.titulo)}</a>`).join('');subsReady=true;linhasAlvo();linkar($('subsBody'));}
 function buscaSubs(q){renderSubs();const hits=[];const body=$('subsBody');$qa('mark.busca',body).forEach(n=>n.replaceWith(n.textContent));body.normalize();if(!q.trim()){$('buscaQt').textContent='';return;}const needle=q.trim().toLocaleLowerCase('pt-BR'),walker=document.createTreeWalker(body,NodeFilter.SHOW_TEXT);let nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);for(const n of nodes){if(n.parentNode.closest('mark,script,style'))continue;let txt=n.textContent,start=0;while((start=txt.toLocaleLowerCase('pt-BR').indexOf(needle,start))>=0){hits.push({n,start,end:start+q.length});start+=q.length;if(hits.length>=1500)break}if(hits.length>=1500)break}for(const h of hits.reverse()){const tail=h.n.splitText(h.end),middle=h.n.splitText(h.start),mark=document.createElement('mark');mark.className='busca';middle.replaceWith(mark);mark.append(middle);}$('buscaQt').textContent=`${hits.length} ocorrência(s)`;if(hits.length){$q('mark.busca',body)?.scrollIntoView({block:'center'});}}
 /* ---------- Catálogo ---------- */
 const FAM={AF:'Interface frontal',TP:'Água, solo e vegetação',AL:'Laterais e fundos',FA:'Atividade e fruição',CT:'Calçadas e território'};
@@ -1859,6 +1881,30 @@ function ligarJSON(){const d=$('jsonDlg');if(!d)return;
  $('jsonAplicar').addEventListener('click',()=>aplicarJSON($('jsonTxt').value));
  $('jsonFechar').addEventListener('click',fecharJSON)}
 window.__OUS_JSON={abrir:abrirJSON,fechar:fecharJSON};
+/* ---------- links internos: quadros, anexos, decisões e questões jurídicas ---------- */
+const ALVOS={};
+(function(){for(const m of SUB.matchAll(/^#{2,4}\s+(Quadro P-\d+)\s+—\s+(.+?)\s+\{#([\w-]+)\}/gm))ALVOS[m[1]]={id:m[3],t:`${m[1]} — ${m[2]}`};
+ for(const [k,id] of [['Quadro consolidado de condições','quadro-condicoes'],['Quadro de decisões pendentes','quadro-decisoes'],['Quadro de questões para validação jurídica','quadro-pgm'],['Referências comparadas','benchmarks'],['Quadro de referências comparadas','benchmarks'],['Quadro consolidado','quadro-condicoes'],['Anexo C','anexo-c-solucoes'],['Anexo D','anexo-d-intervencoes'],['Glossário','glossario']])ALVOS[k]={id,t:k}})();
+function linhasAlvo(){const body=$('subsBody');if(!body)return;
+ const marca=(hid,re,pref)=>{const h=$(hid);if(!h)return;let el=h.nextElementSibling;while(el&&!el.querySelector?.('table')&&el.tagName!=='TABLE')el=el.nextElementSibling;const t=el&&(el.tagName==='TABLE'?el:el.querySelector('table'));if(!t)return;
+  for(const tr of t.querySelectorAll('tbody tr')){const c=tr.cells[0];const v=c&&c.textContent.trim();if(v&&re.test(v)){tr.id=pref+v;tr.classList.add('refAlvo')}}};
+ marca('quadro-decisoes',/^D-\d+$/,'dec-');marca('quadro-pgm',/^\d+$/,'qj-')}
+const REF_RE=/Quadro P-\d{2}|Quadro consolidado de condições|Quadro consolidado|Quadro de referências comparadas|Quadro de decisões pendentes|Quadro de questões para validação jurídica|Referências comparadas|Anexo [CD](?![\wºª.])|\bD-\d{2}\b|\bquest(?:ão|ões)\s+(?:jurídicas?\s+)?\d{1,2}\b/g;
+const PULA_REF='a,button,code,lei-ref,h1,h2,h3,h4,h5,h6,input,textarea,select,script,style,svg,.ntUI,.ntPop,.ntEditBar,.leiPop,[contenteditable="true"],.refAlvo>td:first-child';
+function alvoDe(txt){let m;if(ALVOS[txt])return ALVOS[txt];if((m=txt.match(/^D-(\d+)$/))){const id='dec-'+txt;return{id:$(id)?id:'quadro-decisoes',t:'Quadro de decisões pendentes — '+txt}}
+ if((m=txt.match(/(\d{1,2})$/))&&/^quest/.test(txt)){const id='qj-'+m[1];return{id:$(id)?id:'quadro-pgm',t:'Questão jurídica '+m[1]}}return null}
+let linkando=false;
+function linkar(root){if(!root||!root.isConnected)return 0;let n=0;const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:t=>{REF_RE.lastIndex=0;if(!REF_RE.test(t.data))return NodeFilter.FILTER_REJECT;const p=t.parentElement;return !p||p.closest(PULA_REF)?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT}});
+ const nos=[];while(w.nextNode())nos.push(w.currentNode);linkando=true;
+ for(const t of nos){const frag=document.createDocumentFragment();let k=0,mud=false;REF_RE.lastIndex=0;let m;
+  while((m=REF_RE.exec(t.data))){const a=alvoDe(m[0].replace(/\s+/g,' '));if(!a)continue;if(m.index>k)frag.append(t.data.slice(k,m.index));const el=document.createElement('a');el.className='refInt';el.href='#'+a.id;el.title='Ir para: '+a.t;el.textContent=m[0];frag.append(el);k=m.index+m[0].length;mud=true;n++}
+  if(!mud)continue;if(k<t.data.length)frag.append(t.data.slice(k));t.replaceWith(frag)}
+ queueMicrotask(()=>{linkando=false});return n}
+// Simulador e Fluxograma também citam quadros, decisões e questões: liga os links quando o conteúdo muda
+const sujosRef=new Set();let tmRef=0;
+const moRef=new MutationObserver(ms=>{if(linkando)return;for(const m of ms){const el=m.target.nodeType===1?m.target:m.target.parentElement;const r=el&&el.closest('#sgApp,#fxApp');if(r)sujosRef.add(r)}
+ if(!sujosRef.size)return;clearTimeout(tmRef);tmRef=setTimeout(()=>{const rs=[...sujosRef];sujosRef.clear();rs.forEach(linkar)},200)});
+function ligarRefs(){for(const id of ['sgApp','fxApp']){const r=$(id);if(r){linkar(r);moRef.observe(r,{childList:true,subtree:true,characterData:true})}}}
 /* ---------- termos ---------- */
 function abrirTermos(){const i=SUB.indexOf('{#glossario}'),j=SUB.indexOf('\n## ',i);const itens=SUB.slice(i,j).split('\n').filter(l=>l.startsWith('- **')).map(l=>{const m=l.match(/^- \*\*(.+?)\*\*: (.+)$/);return m?[m[1],m[2]]:null}).filter(Boolean);
  const d=$('termosDlg');$('termosBody').innerHTML=itens.map(([t,s])=>`<div><b>${escapeHtml(t)}</b><p>${escapeHtml(s)}</p></div>`).join('');if(d.showModal){if(!d.open)d.showModal()}else d.setAttribute('open','')}
@@ -1880,9 +1926,9 @@ function iniciar(){renderSubs();renderCatalogo();
  ['filtroSub','filtroFaixa'].forEach(id=>$(id).addEventListener('change',renderImpacto));
  document.addEventListener('click',e=>{if(e.target.closest('[data-glossario]')){e.preventDefault();abrirTermos()}if(e.target.closest('[data-fechar]'))$('termosDlg').close?.()});
  const fb=$('uxFonte');let maior=false;try{maior=localStorage.getItem('ousFonte')==='1'}catch(e){}const aplica=()=>{document.documentElement.classList.toggle('fonteMaior',maior);fb.setAttribute('aria-pressed',String(maior));fb.textContent=maior?'A−':'A+';fb.setAttribute('aria-label',maior?'Reduzir o tamanho do texto':'Aumentar o tamanho do texto')};aplica();fb.addEventListener('click',()=>{maior=!maior;try{localStorage.setItem('ousFonte',maior?'1':'0')}catch(e){}aplica()});
- window.addEventListener('hashchange',hashNav);hashNav();}
+ window.addEventListener('hashchange',hashNav);hashNav();setTimeout(ligarRefs,0);}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',iniciar);else iniciar();
-window.__OUS_CORE={renderSubs,renderCatalogo,renderConferencia,quadroMd,hashNav,imprimir,paginaAtual};
+window.__OUS_CORE={renderSubs,renderCatalogo,renderConferencia,quadroMd,hashNav,imprimir,paginaAtual,linkar};
 })();
 </script>
 <script id="sg-v41">(function(){'use strict';
@@ -2731,7 +2777,7 @@ function ligar(root){if(!root||!root.isConnected)return 0;let n=0;
   for(const m of ok){if(m.i>k)frag.append(t.data.slice(k,m.i));const el=document.createElement('lei-ref');el.textContent=m.s;el.dataset.ref=m.s.replace(/\s+/g,' ');el.tabIndex=0;el.setAttribute('role','button');el.setAttribute('aria-haspopup','dialog');el.setAttribute('aria-expanded','false');el.setAttribute('aria-controls','leiPop');frag.append(el);k=m.i+m.s.length;n++}
   if(k<t.data.length)frag.append(t.data.slice(k));t.replaceWith(frag)}
  queueMicrotask(()=>{proprio=false});return n}
-const RAIZES=['#subsBody','[data-page="fluxo"]','[data-page="regras"]','#catFichas','#contrapartidas','#fdBody','[data-page="simulador"] details.explica','#cpAplica','[data-page="inicio"]'];
+const RAIZES=['#subsBody','#fxApp','#sgApp','#dpApp','[data-page="fluxo"]','[data-page="regras"]','#catFichas','#contrapartidas','#fdBody','[data-page="simulador"] details.explica','#cpAplica','[data-page="inicio"]'];
 function varrer(){let n=0;for(const s of RAIZES)for(const r of document.querySelectorAll(s))n+=ligar(r);return n}
 let tm=0;const sujos=new Set();const SEL=RAIZES.join(',');
 const mo=new MutationObserver(ms=>{if(proprio)return;for(const m of ms){const el=m.target.nodeType===1?m.target:m.target.parentElement;const r=el&&el.closest(SEL);if(r)sujos.add(r);else if(el)for(const n of m.addedNodes)if(n.nodeType===1){if(n.matches(SEL))sujos.add(n);n.querySelectorAll?.(SEL).forEach(x=>sujos.add(x))}}
