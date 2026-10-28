@@ -2236,6 +2236,8 @@ function render(){const d=derivar();const foco=document.activeElement&&app.conta
  atualizar(d);
  if(foco){const el=app.querySelector(`[data-k="${foco}"]`)||document.getElementById(foco);if(el&&el.focus){el.focus({preventScroll:true});if(el.setSelectionRange&&el.value!=null)try{el.setSelectionRange(el.value.length,el.value.length)}catch(e){}}}}
 function atualizar(d){d=d||derivar();const put=(k,h)=>{const el=app.querySelector(`[data-res="${k}"]`);if(el)el.innerHTML=h};
+ // o enquadramento (superação, avisos e UR do gerador) depende de todos os números: refeito a cada alteração
+ const ce=app.querySelector('#sg-caso .sgBody');if(ce)ce.innerHTML=htmlCaso(d);
  put('frente',resFrente(d));put('tp',resTP(d));put('laterais',resLat(d));put('vagas',resVagas(d));put('cp',resCP(d));
  const t4=app.querySelector('[data-res="tab4"]');if(t4){const af=tabela4(n(S.H));t4.innerHTML=Number.isFinite(af)?`<p class="hint">Afastamento da Tabela 4 (B = 8) para H = ${f(n(S.H),1)} m: <b>${f(af)} m</b>.</p>`:''}
  for(const [k] of ETAPAS){const node=app.querySelector(`.sgRail a[data-ir="${k}"]`)?.parentElement;if(node){node.className=`sgNode sg-${d[k]}${d.livre[k]?'':' sgLock'}`;const sm=node.querySelector('small');if(sm)sm.textContent=k==='caso'&&d.c.id?d.c.id:(ROT[d[k]]||'')}
@@ -2296,7 +2298,7 @@ function montar(){app=$('sgApp');if(!app||app.dataset.ok)return;app.dataset.ok='
  app.addEventListener('input',e=>{const t=e.target;if(t.dataset.tk!=null){const i=+t.dataset.tk;S.trechos=S.trechos&&S.trechos.length?S.trechos:[{},{}];S.trechos[i]=S.trechos[i]||{};S.trechos[i][t.dataset.tf]=t.value;gravar();atualizar();return}
   if(t.dataset.k&&t.tagName==='INPUT')mudar(t.dataset.k,t.value,false)});
  app.addEventListener('change',e=>{const t=e.target;if(t.tagName==='SELECT'){if(t.dataset.tk!=null){const i=+t.dataset.tk;S.trechos=S.trechos&&S.trechos.length?S.trechos:[{},{}];S.trechos[i]=S.trechos[i]||{};S.trechos[i][t.dataset.tf]=t.value;gravar();atualizar();return}
-  if(t.dataset.k)mudar(t.dataset.k,t.value,false)}});
+  if(t.dataset.k)mudar(t.dataset.k,t.value,true)}});
  render()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',montar);else montar();
 window.__OUS_SG={montar,caso,geracao,avalFrente,avalTP,avalLat,avalVagas,avalCP,tabela4,derivar,prepararRelatorio,relatorio,lerCaso,salvarCaso,estado:()=>S,definir:o=>{S=o;gravar();render()}};
